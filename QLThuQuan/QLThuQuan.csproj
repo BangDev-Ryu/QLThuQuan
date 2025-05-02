@@ -99,7 +99,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\ThanhVienBLL.cs" />
+    <Compile Include="BLL\ThietBiBLL.cs" />
     <Compile Include="DAL\ThanhVienDAL.cs" />
+    <Compile Include="DAL\ThietBiDAL.cs" />
     <Compile Include="DB\DBConnect.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -131,6 +133,12 @@
     <Compile Include="GUI\ThietBiForm.Designer.cs">
       <DependentUpon>ThietBiForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ThietBiFormControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBiFormControl.Designer.cs">
+      <DependentUpon>ThietBiFormControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ThongKeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +152,7 @@
       <DependentUpon>ViPhamForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\ThanhVien.cs" />
+    <Compile Include="Models\ThietBi.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\MainForm.resx">
@@ -157,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThietBiForm.resx">
       <DependentUpon>ThietBiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBiFormControl.resx">
+      <DependentUpon>ThietBiFormControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThongKeForm.resx">
       <DependentUpon>ThongKeForm.cs</DependentUpon>
