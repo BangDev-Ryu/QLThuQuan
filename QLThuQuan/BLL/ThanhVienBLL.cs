@@ -16,5 +16,20 @@ namespace QLThuQuan.BLL
         {
             return thanhVienDAL.GetAllThanhVien();
         }
+
+        public bool AddThanhVien(ThanhVien thanhVien)
+        {
+            return thanhVienDAL.AddThanhVien(thanhVien);
+        }
+
+        public bool UpdateThanhVien(ThanhVien thanhVien)
+        {
+            return thanhVienDAL.UpdateThanhVien(thanhVien);
+        }
+
+        public bool DeleteThanhVien(int id)
+        {
+            return thanhVienDAL.DeleteThanhVien(id);
+        }
     }
 }

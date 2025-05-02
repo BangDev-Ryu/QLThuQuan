@@ -35,6 +35,7 @@
             this.fullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.khoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nganh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAddThanhVien = new System.Windows.Forms.Button();
             this.btnUpdateThanhVien = new System.Windows.Forms.Button();
             this.btnDeleteThanhVien = new System.Windows.Forms.Button();
@@ -61,7 +62,8 @@
             this.password,
             this.fullname,
             this.khoa,
-            this.nganh});
+            this.nganh,
+            this.trangThai});
             this.tableThanhVien.Location = new System.Drawing.Point(64, 132);
             this.tableThanhVien.Name = "tableThanhVien";
             this.tableThanhVien.RowHeadersVisible = false;
@@ -105,6 +107,11 @@
             this.nganh.Name = "nganh";
             this.nganh.ReadOnly = true;
             // 
+            // trangThai
+            // 
+            this.trangThai.HeaderText = "Trạng thái";
+            this.trangThai.Name = "trangThai";
+            // 
             // btnAddThanhVien
             // 
             this.btnAddThanhVien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -114,6 +121,7 @@
             this.btnAddThanhVien.TabIndex = 1;
             this.btnAddThanhVien.Text = "Thêm thành viên";
             this.btnAddThanhVien.UseVisualStyleBackColor = true;
+            this.btnAddThanhVien.Click += new System.EventHandler(this.btnAddThanhVien_Click);
             // 
             // btnUpdateThanhVien
             // 
@@ -124,6 +132,7 @@
             this.btnUpdateThanhVien.TabIndex = 2;
             this.btnUpdateThanhVien.Text = "Sửa thành viên";
             this.btnUpdateThanhVien.UseVisualStyleBackColor = true;
+            this.btnUpdateThanhVien.Click += new System.EventHandler(this.btnUpdateThanhVien_Click);
             // 
             // btnDeleteThanhVien
             // 
@@ -134,6 +143,7 @@
             this.btnDeleteThanhVien.TabIndex = 3;
             this.btnDeleteThanhVien.Text = "Xóa thành viên";
             this.btnDeleteThanhVien.UseVisualStyleBackColor = true;
+            this.btnDeleteThanhVien.Click += new System.EventHandler(this.btnDeleteThanhVien_Click);
             // 
             // textBox1
             // 
@@ -208,12 +218,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn username;
-        private System.Windows.Forms.DataGridViewTextBoxColumn password;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fullname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn khoa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nganh;
         private System.Windows.Forms.DataGridView tableThanhVien;
         private System.Windows.Forms.Button btnAddThanhVien;
         private System.Windows.Forms.Button btnUpdateThanhVien;
@@ -223,5 +227,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAddLuotVao;
         private System.Windows.Forms.Button btnQuanLyPhieuMuon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn username;
+        private System.Windows.Forms.DataGridViewTextBoxColumn password;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fullname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn khoa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nganh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn trangThai;
     }
 }

@@ -25,12 +25,13 @@ namespace QLThuQuan.GUI
         {
             tableThanhVien.AutoGenerateColumns = false;
 
-            id.DataPropertyName = "Id";
-            username.DataPropertyName = "Username"; 
-            password.DataPropertyName = "Password";
-            fullname.DataPropertyName = "FullName";
-            khoa.DataPropertyName = "Khoa";
-            nganh.DataPropertyName = "Nganh";
+            id.DataPropertyName = "id";
+            username.DataPropertyName = "username"; 
+            password.DataPropertyName = "password";
+            fullname.DataPropertyName = "fullname";
+            khoa.DataPropertyName = "khoa";
+            nganh.DataPropertyName = "nganh";
+            trangThai.DataPropertyName = "trangThai";
         }
 
         public void ThanhVienForm_Load(object sender, EventArgs e)
@@ -41,8 +42,91 @@ namespace QLThuQuan.GUI
         public void LoadData()
         {
             List<ThanhVien> list = thanhVienBLL.GetThanhViens();
+            tableThanhVien.DataSource = null;
             tableThanhVien.DataSource = list;
+            tableThanhVien.ClearSelection();
         }
 
+        private void btnAddThanhVien_Click(object sender, EventArgs e)
+        {
+            var addForm = new ThanhVienFormControl();
+            addForm.ShowDialog();
+            LoadData();
+        }
+
+        private void btnUpdateThanhVien_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra xem có dòng nào được chọn không
+            if (tableThanhVien.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn thành viên cần sửa!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Lấy thông tin thành viên từ dòng được chọn
+            var selectedRow = tableThanhVien.SelectedRows[0];
+            var thanhVien = new ThanhVien
+            {
+                id = Convert.ToInt32(selectedRow.Cells["id"].Value),
+                username = selectedRow.Cells["username"].Value.ToString(),
+                password = selectedRow.Cells["password"].Value.ToString(),
+                fullName = selectedRow.Cells["fullname"].Value.ToString(),
+                khoa = selectedRow.Cells["khoa"].Value.ToString(),
+                nganh = selectedRow.Cells["nganh"].Value.ToString(),
+                trangThai = selectedRow.Cells["trangThai"].Value.ToString(),
+                isExist = true
+            };
+
+            var updateForm = new ThanhVienFormControl(thanhVien);
+            updateForm.ShowDialog();
+
+            LoadData();
+        }
+
+        private void btnDeleteThanhVien_Click(object sender, EventArgs e)
+        {
+            if (tableThanhVien.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn thành viên cần xóa!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; 
+            }
+
+            // Lấy thông tin thành viên từ dòng được chọn
+            var selectedRow = tableThanhVien.SelectedRows[0];
+            int id = Convert.ToInt32(selectedRow.Cells["id"].Value);
+
+            // Hiện hộp thoại xác nhận xóa
+            var result = MessageBox.Show(
+                $"Bạn có chắc chắn muốn xóa?",
+                "Xác nhận xóa",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    if (thanhVienBLL.DeleteThanhVien(id))
+                    {
+                        MessageBox.Show("Xóa thành viên thành công!", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadData(); 
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa thành viên thất bại!", "Lỗi",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Lỗi: {ex.Message}", "Lỗi",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }

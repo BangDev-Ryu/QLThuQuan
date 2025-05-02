@@ -119,6 +119,12 @@
     <Compile Include="GUI\ThanhVienForm.Designer.cs">
       <DependentUpon>ThanhVienForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ThanhVienFormControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThanhVienFormControl.Designer.cs">
+      <DependentUpon>ThanhVienFormControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ThietBiForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThanhVienForm.resx">
       <DependentUpon>ThanhVienForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThanhVienFormControl.resx">
+      <DependentUpon>ThanhVienFormControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThietBiForm.resx">
       <DependentUpon>ThietBiForm.cs</DependentUpon>
