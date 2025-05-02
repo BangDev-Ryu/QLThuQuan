@@ -14,9 +14,12 @@ namespace QLThuQuan.Models
         public string fullName { get; set; }
         public string khoa { get; set; }
         public string nganh { get; set; }
+        public string trangThai { get; set; }
         public bool isExist { get; set; }
 
-        public ThanhVien(int id, string username, string password, string fullName, string khoa, string nganh, bool isExist)
+        public ThanhVien() { }
+
+        public ThanhVien(int id, string username, string password, string fullName, string khoa, string nganh, string trangThai, bool isExist)
         {
             this.id = id;
             this.username = username;
@@ -24,6 +27,7 @@ namespace QLThuQuan.Models
             this.fullName = fullName;
             this.khoa = khoa;
             this.nganh = nganh;
+            this.trangThai = trangThai;
             this.isExist = isExist;
         }
     }
