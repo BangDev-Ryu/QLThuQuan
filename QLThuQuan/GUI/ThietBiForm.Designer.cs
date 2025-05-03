@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.tableThietBi = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addBtn = new System.Windows.Forms.Button();
             this.EditBtn = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tableThietBi)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -59,6 +59,24 @@
             this.tableThietBi.Size = new System.Drawing.Size(904, 512);
             this.tableThietBi.TabIndex = 0;
             this.tableThietBi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.Width = 300;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Tên thiết bị";
+            this.name.Name = "name";
+            this.name.Width = 300;
+            // 
+            // loai
+            // 
+            this.loai.HeaderText = "Loại thiết bị";
+            this.loai.Name = "loai";
+            this.loai.Width = 300;
             // 
             // addBtn
             // 
@@ -118,24 +136,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(158, 20);
             this.textBox1.TabIndex = 4;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.Width = 300;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Tên thiết bị";
-            this.name.Name = "name";
-            this.name.Width = 300;
-            // 
-            // loai
-            // 
-            this.loai.HeaderText = "Loại thiết bị";
-            this.loai.Name = "loai";
-            this.loai.Width = 300;
             // 
             // ThietBiForm
             // 
