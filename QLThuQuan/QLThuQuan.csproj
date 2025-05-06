@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -98,7 +98,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\CTPhieuMuon.cs" />
+    <Compile Include="BLL\PhieuMuonBLL.cs" />
     <Compile Include="BLL\ThanhVienBLL.cs" />
+    <Compile Include="DAL\CTPhieuMuonDAL.cs" />
+    <Compile Include="DAL\PhieuMuonDAL.cs" />
     <Compile Include="DAL\ThanhVienDAL.cs" />
     <Compile Include="DB\DBConnect.cs" />
     <Compile Include="Form1.cs">
@@ -107,11 +111,35 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\AddLuotVaoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AddLuotVaoForm.Designer.cs">
+      <DependentUpon>AddLuotVaoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CTPhieuMuonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CTPhieuMuonForm.Designer.cs">
+      <DependentUpon>CTPhieuMuonForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MuonThietBiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MuonThietBiForm.Designer.cs">
+      <DependentUpon>MuonThietBiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PhieuMuonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PhieuMuonForm.Designer.cs">
+      <DependentUpon>PhieuMuonForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ThanhVienForm.cs">
       <SubType>Form</SubType>
@@ -137,17 +165,37 @@
     <Compile Include="GUI\ThongKeForm.Designer.cs">
       <DependentUpon>ThongKeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\TraThietBiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\TraThietBiForm.Designer.cs">
+      <DependentUpon>TraThietBiForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ViPhamForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\ViPhamForm.Designer.cs">
       <DependentUpon>ViPhamForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\CTPhieuMuon.cs" />
+    <Compile Include="Models\PhieuMuon.cs" />
     <Compile Include="Models\ThanhVien.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\AddLuotVaoForm.resx">
+      <DependentUpon>AddLuotVaoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CTPhieuMuonForm.resx">
+      <DependentUpon>CTPhieuMuonForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MuonThietBiForm.resx">
+      <DependentUpon>MuonThietBiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PhieuMuonForm.resx">
+      <DependentUpon>PhieuMuonForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThanhVienForm.resx">
       <DependentUpon>ThanhVienForm.cs</DependentUpon>
@@ -160,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThongKeForm.resx">
       <DependentUpon>ThongKeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\TraThietBiForm.resx">
+      <DependentUpon>TraThietBiForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ViPhamForm.resx">
       <DependentUpon>ViPhamForm.cs</DependentUpon>
