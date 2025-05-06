@@ -64,60 +64,71 @@
             this.khoa,
             this.nganh,
             this.trangThai});
-            this.tableThanhVien.Location = new System.Drawing.Point(64, 132);
+            this.tableThanhVien.Location = new System.Drawing.Point(85, 162);
+            this.tableThanhVien.Margin = new System.Windows.Forms.Padding(4);
             this.tableThanhVien.Name = "tableThanhVien";
             this.tableThanhVien.RowHeadersVisible = false;
+            this.tableThanhVien.RowHeadersWidth = 51;
             this.tableThanhVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tableThanhVien.Size = new System.Drawing.Size(904, 512);
+            this.tableThanhVien.Size = new System.Drawing.Size(1205, 630);
             this.tableThanhVien.TabIndex = 0;
+            this.tableThanhVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableThanhVien_CellContentClick);
             // 
             // id
             // 
             this.id.HeaderText = "Id";
+            this.id.MinimumWidth = 6;
             this.id.Name = "id";
             this.id.ReadOnly = true;
             // 
             // username
             // 
             this.username.HeaderText = "Username";
+            this.username.MinimumWidth = 6;
             this.username.Name = "username";
             this.username.ReadOnly = true;
             // 
             // password
             // 
             this.password.HeaderText = "Password";
+            this.password.MinimumWidth = 6;
             this.password.Name = "password";
             this.password.ReadOnly = true;
             // 
             // fullname
             // 
             this.fullname.HeaderText = "Fullname";
+            this.fullname.MinimumWidth = 6;
             this.fullname.Name = "fullname";
             this.fullname.ReadOnly = true;
             // 
             // khoa
             // 
             this.khoa.HeaderText = "Khoa";
+            this.khoa.MinimumWidth = 6;
             this.khoa.Name = "khoa";
             this.khoa.ReadOnly = true;
             // 
             // nganh
             // 
             this.nganh.HeaderText = "Nganh";
+            this.nganh.MinimumWidth = 6;
             this.nganh.Name = "nganh";
             this.nganh.ReadOnly = true;
             // 
             // trangThai
             // 
             this.trangThai.HeaderText = "Trạng thái";
+            this.trangThai.MinimumWidth = 6;
             this.trangThai.Name = "trangThai";
             // 
             // btnAddThanhVien
             // 
             this.btnAddThanhVien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddThanhVien.Location = new System.Drawing.Point(64, 83);
+            this.btnAddThanhVien.Location = new System.Drawing.Point(85, 102);
+            this.btnAddThanhVien.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddThanhVien.Name = "btnAddThanhVien";
-            this.btnAddThanhVien.Size = new System.Drawing.Size(112, 40);
+            this.btnAddThanhVien.Size = new System.Drawing.Size(149, 49);
             this.btnAddThanhVien.TabIndex = 1;
             this.btnAddThanhVien.Text = "Thêm thành viên";
             this.btnAddThanhVien.UseVisualStyleBackColor = true;
@@ -126,9 +137,10 @@
             // btnUpdateThanhVien
             // 
             this.btnUpdateThanhVien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateThanhVien.Location = new System.Drawing.Point(182, 83);
+            this.btnUpdateThanhVien.Location = new System.Drawing.Point(243, 102);
+            this.btnUpdateThanhVien.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdateThanhVien.Name = "btnUpdateThanhVien";
-            this.btnUpdateThanhVien.Size = new System.Drawing.Size(112, 40);
+            this.btnUpdateThanhVien.Size = new System.Drawing.Size(149, 49);
             this.btnUpdateThanhVien.TabIndex = 2;
             this.btnUpdateThanhVien.Text = "Sửa thành viên";
             this.btnUpdateThanhVien.UseVisualStyleBackColor = true;
@@ -137,9 +149,10 @@
             // btnDeleteThanhVien
             // 
             this.btnDeleteThanhVien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteThanhVien.Location = new System.Drawing.Point(300, 83);
+            this.btnDeleteThanhVien.Location = new System.Drawing.Point(400, 102);
+            this.btnDeleteThanhVien.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteThanhVien.Name = "btnDeleteThanhVien";
-            this.btnDeleteThanhVien.Size = new System.Drawing.Size(112, 40);
+            this.btnDeleteThanhVien.Size = new System.Drawing.Size(149, 49);
             this.btnDeleteThanhVien.TabIndex = 3;
             this.btnDeleteThanhVien.Text = "Xóa thành viên";
             this.btnDeleteThanhVien.UseVisualStyleBackColor = true;
@@ -147,56 +160,63 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(68, 15);
+            this.textBox1.Location = new System.Drawing.Point(91, 18);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(158, 20);
+            this.textBox1.Size = new System.Drawing.Size(209, 22);
             this.textBox1.TabIndex = 4;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Location = new System.Drawing.Point(739, 79);
+            this.panel1.Location = new System.Drawing.Point(985, 97);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(229, 47);
+            this.panel1.Size = new System.Drawing.Size(305, 58);
             this.panel1.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 18);
+            this.label1.Location = new System.Drawing.Point(5, 22);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 15);
+            this.label1.Size = new System.Drawing.Size(70, 20);
             this.label1.TabIndex = 5;
             this.label1.Text = "Tìm kiếm";
             // 
             // btnAddLuotVao
             // 
             this.btnAddLuotVao.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddLuotVao.Location = new System.Drawing.Point(856, 33);
+            this.btnAddLuotVao.Location = new System.Drawing.Point(1141, 41);
+            this.btnAddLuotVao.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddLuotVao.Name = "btnAddLuotVao";
-            this.btnAddLuotVao.Size = new System.Drawing.Size(112, 40);
+            this.btnAddLuotVao.Size = new System.Drawing.Size(149, 49);
             this.btnAddLuotVao.TabIndex = 6;
             this.btnAddLuotVao.Text = "Vào khu học tập";
             this.btnAddLuotVao.UseVisualStyleBackColor = true;
+            this.btnAddLuotVao.Click += new System.EventHandler(this.btnAddLuotVao_Click);
             // 
             // btnQuanLyPhieuMuon
             // 
             this.btnQuanLyPhieuMuon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuanLyPhieuMuon.Location = new System.Drawing.Point(738, 33);
+            this.btnQuanLyPhieuMuon.Location = new System.Drawing.Point(984, 41);
+            this.btnQuanLyPhieuMuon.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuanLyPhieuMuon.Name = "btnQuanLyPhieuMuon";
-            this.btnQuanLyPhieuMuon.Size = new System.Drawing.Size(112, 40);
+            this.btnQuanLyPhieuMuon.Size = new System.Drawing.Size(149, 49);
             this.btnQuanLyPhieuMuon.TabIndex = 7;
             this.btnQuanLyPhieuMuon.Text = "Quản lý phiếu mượn";
             this.btnQuanLyPhieuMuon.UseVisualStyleBackColor = true;
+            this.btnQuanLyPhieuMuon.Click += new System.EventHandler(this.btnQuanLyPhieuMuon_Click);
             // 
             // ThanhVienForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1064, 681);
+            this.ClientSize = new System.Drawing.Size(1419, 838);
             this.Controls.Add(this.btnQuanLyPhieuMuon);
             this.Controls.Add(this.btnAddLuotVao);
             this.Controls.Add(this.panel1);
@@ -205,6 +225,7 @@
             this.Controls.Add(this.btnAddThanhVien);
             this.Controls.Add(this.tableThanhVien);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ThanhVienForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ThanhVienForm";
