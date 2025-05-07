@@ -31,5 +31,19 @@ namespace QLThuQuan.BLL
         {
             return thanhVienDAL.DeleteThanhVien(id);
         }
+
+        public ThanhVien GetThanhVienByUserName(string username)
+        {
+            return thanhVienDAL.getThanhVienByUserName(username);
+        }
+
+        public string getTrangThaiByID(int id)
+        {
+            return thanhVienDAL.getTrangThaiByID(id);
+        }
+        public bool getIsExistByID(int id)
+        {
+            return thanhVienDAL.getIsExistByID(id);
+        }
     }
 }
