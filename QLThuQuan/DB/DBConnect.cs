@@ -11,7 +11,7 @@ namespace QLThuQuan.DB
 {
     public class DBConnect
     {
-        private static readonly string connectionString = "Server=localhost;Database=thuquan;Uid=root;Pwd=;";
+        private static readonly string connectionString = "Server=localhost;Database=thuquan;Uid=root;Pwd=Long@2004;";
 
         public static MySqlConnection GetConnection()
         {
