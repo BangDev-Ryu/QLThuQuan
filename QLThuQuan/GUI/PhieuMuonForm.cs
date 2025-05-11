@@ -66,8 +66,8 @@ namespace QLThuQuan.GUI
 
                 string loaiInput = m.LoaiInput;
 
-                string trangThaiInput = thanhVienBLL.getTrangThaiByID(tvID);
-                bool isExistInput = thanhVienBLL.getIsExistByID(tvID);
+                string trangThaiInput = "Đang xử lý";
+                bool isExistInput = true;
 
                 DateTime ngayMuonInput = DateTime.Now;
 

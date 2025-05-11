@@ -121,7 +121,6 @@ namespace QLThuQuan.DAL
                 using (var cmd = new MySqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@username", username);
-
                     using (var reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
@@ -144,50 +143,19 @@ namespace QLThuQuan.DAL
             return null;
         }
 
-        public string getTrangThaiByID(int id)
+        public bool AddLuotVao(int id_thanhVien, DateTime ngayVao)
         {
-            string query = "SELECT trang_thai FROM thanh_vien WHERE id = @id";
-
+            string query = @"INSERT INTO luot_vao (id_thanh_vien, ngay_vao) 
+                            VALUES (@id_thanh_vien, @ngay_vao)";
             using (var conn = DBConnect.GetConnection())
             {
                 using (var cmd = new MySqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@id", id);
-
-                    using (var reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            return reader.GetString("trang_thai");
-                        }
-                    }
+                    cmd.Parameters.AddWithValue("@id_thanh_vien", id_thanhVien);
+                    cmd.Parameters.AddWithValue("@ngay_vao", ngayVao);
+                    return cmd.ExecuteNonQuery() > 0;
                 }
             }
-
-            return null; 
-        }
-
-        public bool getIsExistByID(int id)
-        {
-            string query = "SELECT is_exist FROM thanh_vien WHERE id = @id";
-
-            using (var conn = DBConnect.GetConnection())
-            {
-                using (var cmd = new MySqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@id", id);
-
-                    using (var reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            return reader.GetBoolean("is_exist");
-                        }
-                    }
-                }
-            }
-
-            return false;
         }
 
 
