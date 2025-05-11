@@ -152,16 +152,23 @@ namespace QLThuQuan.GUI
                 if (formAdd.ShowDialog() == DialogResult.OK)
                 {
                     string UserName = formAdd.UserNameInput;
+                    string Password = formAdd.PasswordInput;
 
                     ThanhVien tv = thanhVienBLL.GetThanhVienByUserName(UserName);
-                   
-                    if (tv== null)
+                    int checkLog = thanhVienBLL.checkLogin(UserName, Password);
+
+                    if (checkLog == 0)
                     {
                         MessageBox.Show("Không phải thành viên.");
                         return;
                     }
+                    else if (checkLog == -1)
+                    {
+                        MessageBox.Show("Mật khẩu không đúng.");
+                        return;
+                    }
 
-                    if (tv.trangThai == "Đang vi phạm" )
+                    if (tv.trangThai == "Đang vi phạm")
                     {
                         MessageBox.Show("Thành viên đang bị xử lý vi phạm.");
                         return;
@@ -181,6 +188,7 @@ namespace QLThuQuan.GUI
                     MessageBox.Show(info, "Ghi nhận thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     MessageBox.Show("Ghi nhận thành công.");
+                    bool add = thanhVienBLL.AddLuotVao(tv.id, timeIn);
                 }
             }
         }

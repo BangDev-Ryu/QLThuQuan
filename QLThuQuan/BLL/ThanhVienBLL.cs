@@ -37,13 +37,26 @@ namespace QLThuQuan.BLL
             return thanhVienDAL.getThanhVienByUserName(username);
         }
 
-        public string getTrangThaiByID(int id)
+        public int checkLogin(string username, string password)
         {
-            return thanhVienDAL.getTrangThaiByID(id);
+            ThanhVien tv = thanhVienDAL.getThanhVienByUserName(username);
+
+            if (tv == null)
+            {
+                return 0; // Tài khoản không tồn tại
+            }
+
+            if (password != tv.password)
+            {
+                return -1; // Sai mật khẩu
+            }
+
+            return 1;
         }
-        public bool getIsExistByID(int id)
+
+        public bool AddLuotVao(int id_thanhVien, DateTime ngayVao)
         {
-            return thanhVienDAL.getIsExistByID(id);
+            return thanhVienDAL.AddLuotVao(id_thanhVien, ngayVao);
         }
     }
 }
