@@ -111,5 +111,87 @@ namespace QLThuQuan.DAL
                 }
             }
         }
+
+        public ThanhVien getThanhVienByUserName(string username)
+        {
+            string query = "SELECT * FROM thanh_vien WHERE username = @username";
+
+            using (var conn = DBConnect.GetConnection())
+            {
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@username", username);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new ThanhVien(
+                                reader.GetInt32("id"),
+                                reader.GetString("username"),
+                                reader.GetString("password"),
+                                reader.GetString("fullname"),
+                                reader.GetString("khoa"),
+                                reader.GetString("nganh"),
+                                reader.GetString("trang_thai"),
+                                reader.GetBoolean("is_exist")
+                            );
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        public string getTrangThaiByID(int id)
+        {
+            string query = "SELECT trang_thai FROM thanh_vien WHERE id = @id";
+
+            using (var conn = DBConnect.GetConnection())
+            {
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return reader.GetString("trang_thai");
+                        }
+                    }
+                }
+            }
+
+            return null; 
+        }
+
+        public bool getIsExistByID(int id)
+        {
+            string query = "SELECT is_exist FROM thanh_vien WHERE id = @id";
+
+            using (var conn = DBConnect.GetConnection())
+            {
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return reader.GetBoolean("is_exist");
+                        }
+                    }
+                }
+            }
+
+            return false;
+        }
+
+
+
     }
 }
+
