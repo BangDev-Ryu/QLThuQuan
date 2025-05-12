@@ -31,5 +31,10 @@ namespace QLThuQuan.BLL
         {
             return thietBiDAL.deleteThietBi(id);
         }
+
+        public List<ThietBi> SearchThietBi(string keyword)
+        {
+            return thietBiDAL.searchThietBi(keyword);
+        }
     }
 }
