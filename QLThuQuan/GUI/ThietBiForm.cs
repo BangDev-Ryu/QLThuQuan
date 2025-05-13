@@ -10,7 +10,9 @@ using System.Windows.Forms;
 using QLThuQuan.BLL;
 using QLThuQuan.DAL;
 using QLThuQuan.Models;
-
+using OfficeOpenXml;
+using System.IO;
+using LicenseContext = OfficeOpenXml.LicenseContext;
 namespace QLThuQuan.GUI
 {
     public partial class ThietBiForm : Form
@@ -20,6 +22,7 @@ namespace QLThuQuan.GUI
         {
             InitializeComponent();
             InitializeDataGridView();
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
         }
 
         private void InitializeDataGridView()
@@ -28,6 +31,7 @@ namespace QLThuQuan.GUI
             id.DataPropertyName = "id";
             name.DataPropertyName = "name";
             loai.DataPropertyName = "loai";
+            trangThai.DataPropertyName = "trangThai";
         }
 
         public void LoadData()
@@ -113,6 +117,88 @@ namespace QLThuQuan.GUI
                         MessageBox.Show("Xóa thiết bị thất bại!", "Lỗi",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Lỗi: {ex.Message}", "Lỗi",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string keyword = txtSearch.Text.Trim();
+            if (string.IsNullOrEmpty(keyword))
+            {
+                MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            List<ThietBi> list = thietBiBLL.SearchThietBi(keyword);
+            tableThietBi.DataSource = null;
+            tableThietBi.DataSource = list;
+            tableThietBi.ClearSelection();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadData();
+            txtSearch.Text = string.Empty;
+            MessageBox.Show("Dữ liệu đã được làm mới!", "Thông báo",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private List<ThietBi> ReadExcelFile(string filePath)
+        {
+            List<ThietBi> thietBiList = new List<ThietBi>();
+
+            using (var package = new ExcelPackage(new System.IO.FileInfo(filePath)))
+            {
+                var worksheet = package.Workbook.Worksheets[0]; 
+                int rowCount = worksheet.Dimension.Rows; 
+
+                for (int row = 2; row <= rowCount; row++) 
+                {
+                    var thietBi = new ThietBi
+                    {
+                        name = worksheet.Cells[row, 1].Text.Trim(), 
+                        loai = worksheet.Cells[row, 2].Text.Trim(),
+                        trangThai = "Có sẵn", 
+                        isExist = true 
+                    };
+
+                    thietBiList.Add(thietBi);
+                }
+            }
+
+            return thietBiList;
+        }
+
+
+        private void btnImportExcel_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "Excel Files|*.xls;*.xlsx;*.xlsm",
+                Title = "Chọn tệp Excel"
+            };
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+                try
+                {
+                    var thietBiList = ReadExcelFile(filePath);
+
+                    foreach (var thietBi in thietBiList)
+                    {
+                        thietBiBLL.AddThietBi(thietBi);
+                    }
+
+                    MessageBox.Show("Nhập dữ liệu từ Excel thành công!", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadData();
                 }
                 catch (Exception ex)
                 {
