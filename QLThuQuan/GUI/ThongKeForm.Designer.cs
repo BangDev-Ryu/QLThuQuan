@@ -392,6 +392,8 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnThongKe);
             this.Controls.Add(this.pnChart);
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ThongKeForm";
             this.Text = "ThongKeForm";
