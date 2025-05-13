@@ -42,7 +42,7 @@
             this.trangthai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isexist = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tableViPham)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,7 +83,6 @@
             // 
             this.tableViPham.AllowUserToAddRows = false;
             this.tableViPham.AllowUserToDeleteRows = false;
-            this.tableViPham.AllowUserToOrderColumns = true;
             this.tableViPham.AllowUserToResizeColumns = false;
             this.tableViPham.AllowUserToResizeRows = false;
             this.tableViPham.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -106,7 +105,9 @@
             this.tableViPham.Name = "tableViPham";
             this.tableViPham.RowHeadersVisible = false;
             this.tableViPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tableViPham.Size = new System.Drawing.Size(998, 533);
+            this.tableViPham.ShowCellErrors = false;
+            this.tableViPham.ShowCellToolTips = false;
+            this.tableViPham.Size = new System.Drawing.Size(1025, 533);
             this.tableViPham.TabIndex = 3;
             this.tableViPham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -174,21 +175,21 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Tìm kiếm";
             // 
-            // textBox1
+            // txtSearch
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(635, 95);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(210, 22);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(635, 95);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(210, 22);
+            this.txtSearch.TabIndex = 5;
+            this.txtSearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // ViPhamForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 681);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tableViPham);
             this.Controls.Add(this.delete_btn);
@@ -198,6 +199,7 @@
             this.Name = "ViPhamForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ViPhamForm";
+            this.Load += new System.EventHandler(this.ViPhamForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tableViPham)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -211,7 +213,7 @@
         private System.Windows.Forms.Button delete_btn;
         private System.Windows.Forms.DataGridView tableViPham;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn idthanhvien;
         private System.Windows.Forms.DataGridViewTextBoxColumn hinhthucxuly;

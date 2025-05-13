@@ -21,6 +21,7 @@ namespace QLThuQuan.GUI
         {
             InitializeComponent();
             InitializeDataGridView();
+            LoadData();
         }
         private void InitializeDataGridView()
         {
@@ -45,7 +46,7 @@ namespace QLThuQuan.GUI
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            LoadData();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -57,6 +58,31 @@ namespace QLThuQuan.GUI
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            string input = txtSearch.Text.Trim();
+            List<ViPham> danhSachViPham = viPhamBLL.GetViPham();
+
+            if (input != "")
+            {
+                int id;
+                if (int.TryParse(input, out id))
+                {
+                    List<ViPham> list = new List<ViPham>();
+
+                    foreach (ViPham vp in danhSachViPham)
+                    {
+                        if (vp.IdThanhVien == id)
+                        {
+                            list.Add(vp);
+                        }
+                    }
+
+                    danhSachViPham = list;
+                }
+            }
+
+            tableViPham.DataSource = null;
+            tableViPham.DataSource = danhSachViPham;
+            tableViPham.ClearSelection();
 
         }
 
@@ -129,6 +155,11 @@ namespace QLThuQuan.GUI
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void ViPhamForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
