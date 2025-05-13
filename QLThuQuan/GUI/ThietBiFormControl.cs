@@ -90,5 +90,10 @@ namespace QLThuQuan.GUI
         {
             this.Close();
         }
+
+        private void ThietBiFormControl_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
