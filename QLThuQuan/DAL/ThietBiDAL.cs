@@ -26,6 +26,7 @@ namespace QLThuQuan.DAL
                             reader.GetInt32("id"),
                             reader.GetString("name"),
                             reader.GetString("loai"),
+                            reader.GetString("trang_thai"),
                             reader.GetBoolean("is_exist")
                         ));
                     }
@@ -38,7 +39,7 @@ namespace QLThuQuan.DAL
 
         public bool addThietBi(ThietBi thietBi)
         {
-            string query = @"INSERT INTO thiet_bi (name, loai, is_exist) VALUES (@name, @loai, @isExist)";
+            string query = @"INSERT INTO thiet_bi (name, loai, trang_thai, is_exist) VALUES (@name, @loai, @trangThai, @isExist)";
 
             using (var conn = DBConnect.GetConnection())
             {
@@ -47,6 +48,7 @@ namespace QLThuQuan.DAL
                 {
                     cmd.Parameters.AddWithValue("@name", thietBi.name);
                     cmd.Parameters.AddWithValue("@loai", thietBi.loai);
+                    cmd.Parameters.AddWithValue("@trangThai", "Có sẵn");
                     cmd.Parameters.AddWithValue("@isExist", thietBi.isExist);
                     return cmd.ExecuteNonQuery() > 0;
                 }
@@ -87,5 +89,34 @@ namespace QLThuQuan.DAL
                 }
             }
         } 
+
+        public List<ThietBi> searchThietBi(string keyword)
+        {
+            List<ThietBi> listThietBi = new List<ThietBi>();
+            string query = @"SELECT * FROM thiet_bi
+                             WHERE (name LIKE @keyword OR loai LIKE @keyword) 
+                             AND is_exist = 1";
+            using (var conn = DBConnect.GetConnection())
+            {
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@keyword", $"%{keyword}%");
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            listThietBi.Add(new ThietBi(
+                                reader.GetInt32("id"),
+                                reader.GetString("name"),
+                                reader.GetString("loai"),
+                                reader.GetString("trang_thai"),
+                                reader.GetBoolean("is_exist")
+                            ));
+                        }
+                    }
+                }
+            }
+            return listThietBi;
+        }
     }
 }

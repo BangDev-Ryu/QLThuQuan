@@ -111,5 +111,55 @@ namespace QLThuQuan.DAL
                 }
             }
         }
+
+        public ThanhVien getThanhVienByUserName(string username)
+        {
+            string query = "SELECT * FROM thanh_vien WHERE username = @username";
+
+            using (var conn = DBConnect.GetConnection())
+            {
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@username", username);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new ThanhVien(
+                                reader.GetInt32("id"),
+                                reader.GetString("username"),
+                                reader.GetString("password"),
+                                reader.GetString("fullname"),
+                                reader.GetString("khoa"),
+                                reader.GetString("nganh"),
+                                reader.GetString("trang_thai"),
+                                reader.GetBoolean("is_exist")
+                            );
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        public bool AddLuotVao(int id_thanhVien, DateTime ngayVao)
+        {
+            string query = @"INSERT INTO luot_vao (id_thanh_vien, ngay_vao) 
+                            VALUES (@id_thanh_vien, @ngay_vao)";
+            using (var conn = DBConnect.GetConnection())
+            {
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id_thanh_vien", id_thanhVien);
+                    cmd.Parameters.AddWithValue("@ngay_vao", ngayVao);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+
+
+
     }
 }
+

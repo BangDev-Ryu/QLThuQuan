@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -36,6 +36,15 @@
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>..\packages\BouncyCastle.Cryptography.2.5.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
+    <Reference Include="EPPlus, Version=7.0.0.3, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.7.0.0\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.Interfaces.8.0.0\lib\net462\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Protobuf, Version=3.30.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.30.0\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -51,13 +60,21 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.2.0.0\lib\net462\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=9.3.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.9.3.0\lib\net48\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.ConfigurationManager, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Configuration.ConfigurationManager.8.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
@@ -80,10 +97,16 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Xml, Version=8.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Xml.8.0.2\lib\net462\System.Security.Cryptography.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks" />
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -98,9 +121,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\CTPhieuMuon.cs" />
+    <Compile Include="BLL\PhieuMuonBLL.cs" />
     <Compile Include="BLL\ThanhVienBLL.cs" />
     <Compile Include="BLL\ThietBiBLL.cs" />
     <Compile Include="BLL\ViPhamBLL.cs" />
+    <Compile Include="DAL\CTPhieuMuonDAL.cs" />
+    <Compile Include="DAL\PhieuMuonDAL.cs" />
     <Compile Include="DAL\ThanhVienDAL.cs" />
     <Compile Include="DAL\ThietBiDAL.cs" />
     <Compile Include="DAL\ViPhamDAL.cs" />
@@ -111,11 +138,35 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\AddLuotVaoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AddLuotVaoForm.Designer.cs">
+      <DependentUpon>AddLuotVaoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CTPhieuMuonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CTPhieuMuonForm.Designer.cs">
+      <DependentUpon>CTPhieuMuonForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MuonThietBiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MuonThietBiForm.Designer.cs">
+      <DependentUpon>MuonThietBiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PhieuMuonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PhieuMuonForm.Designer.cs">
+      <DependentUpon>PhieuMuonForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ThanhVienForm.cs">
       <SubType>Form</SubType>
@@ -147,6 +198,12 @@
     <Compile Include="GUI\ThongKeForm.Designer.cs">
       <DependentUpon>ThongKeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\TraThietBiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\TraThietBiForm.Designer.cs">
+      <DependentUpon>TraThietBiForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ViPhamForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,8 +221,20 @@
     <Compile Include="Models\ViPham.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\AddLuotVaoForm.resx">
+      <DependentUpon>AddLuotVaoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CTPhieuMuonForm.resx">
+      <DependentUpon>CTPhieuMuonForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MuonThietBiForm.resx">
+      <DependentUpon>MuonThietBiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PhieuMuonForm.resx">
+      <DependentUpon>PhieuMuonForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThanhVienForm.resx">
       <DependentUpon>ThanhVienForm.cs</DependentUpon>
@@ -181,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThongKeForm.resx">
       <DependentUpon>ThongKeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\TraThietBiForm.resx">
+      <DependentUpon>TraThietBiForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ViPhamForm.resx">
       <DependentUpon>ViPhamForm.cs</DependentUpon>

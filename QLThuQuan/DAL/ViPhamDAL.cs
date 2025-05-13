@@ -9,7 +9,6 @@ namespace QLThuQuan.DAL
 {
     public class ViPhamDAL
     {
-        // Lấy danh sách tất cả vi phạm
         public List<ViPham> GetAllViPham()
         {
             List<ViPham> list = new List<ViPham>();
@@ -41,7 +40,6 @@ namespace QLThuQuan.DAL
             return list;
         }
 
-        // Thêm một vi phạm mới
         public bool AddViPham(ViPham viPham)
         {
             string query = @"INSERT INTO phieu_phat (id_thanh_vien, hinh_thuc_xu_ly, tien_boi_thuong, ngay_phat, ngay_het_han, ly_do, trang_thai, is_exist) 
@@ -64,7 +62,6 @@ namespace QLThuQuan.DAL
             }
         }
 
-        // Cập nhật thông tin vi phạm
         public bool UpdateViPham(ViPham viPham)
         {
             string query = @"UPDATE phieu_phat 
@@ -95,7 +92,6 @@ namespace QLThuQuan.DAL
             }
         }
 
-        // Xóa một vi phạm (đánh dấu is_exist = 0)
         public bool DeleteViPham(int id)
         {
             string query = @"UPDATE phieu_phat 
@@ -113,7 +109,6 @@ namespace QLThuQuan.DAL
             }
         }
 
-        // Tìm kiếm vi phạm theo tên
         public List<ViPham> SearchViPhamByName(string name)
         {
             List<ViPham> list = new List<ViPham>();

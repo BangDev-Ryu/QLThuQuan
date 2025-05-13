@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLThuQuan.BLL;
+using QLThuQuan.DAL;
 using QLThuQuan.Models;
 
 namespace QLThuQuan.GUI
@@ -125,6 +126,69 @@ namespace QLThuQuan.GUI
                 {
                     MessageBox.Show($"Lỗi: {ex.Message}", "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void tableThanhVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnQuanLyPhieuMuon_Click(object sender, EventArgs e)
+        {
+            PhieuMuonForm f = new PhieuMuonForm();
+            f.StartPosition = FormStartPosition.CenterParent;
+            f.ShowDialog(this);
+
+
+
+        }
+
+        private void btnAddLuotVao_Click(object sender, EventArgs e)
+        {
+            using (AddLuotVaoForm formAdd = new AddLuotVaoForm())
+            {
+                if (formAdd.ShowDialog() == DialogResult.OK)
+                {
+                    string UserName = formAdd.UserNameInput;
+                    string Password = formAdd.PasswordInput;
+
+                    ThanhVien tv = thanhVienBLL.GetThanhVienByUserName(UserName);
+                    int checkLog = thanhVienBLL.checkLogin(UserName, Password);
+
+                    if (checkLog == 0)
+                    {
+                        MessageBox.Show("Không phải thành viên.");
+                        return;
+                    }
+                    else if (checkLog == -1)
+                    {
+                        MessageBox.Show("Mật khẩu không đúng.");
+                        return;
+                    }
+
+                    if (tv.trangThai == "Đang vi phạm")
+                    {
+                        MessageBox.Show("Thành viên đang bị xử lý vi phạm.");
+                        return;
+                    }
+
+                    DateTime timeIn = DateTime.Now;
+
+                    string info = $"THÔNG TIN THÀNH VIÊN:\n" +
+                          $"- Mã TV: {tv.id}\n" +
+                          $"- Tên đăng nhập: {tv.username}\n" +
+                          $"- Họ tên: {tv.fullName}\n" +
+                          $"- Khoa: {tv.khoa}\n" +
+                          $"- Ngành: {tv.nganh}\n" +
+                          $"- Trạng thái: {tv.trangThai}\n" +
+                          $"- Thời điểm vào: {timeIn:HH:mm:ss dd/MM/yyyy}";
+
+                    MessageBox.Show(info, "Ghi nhận thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    MessageBox.Show("Ghi nhận thành công.");
+                    bool add = thanhVienBLL.AddLuotVao(tv.id, timeIn);
                 }
             }
         }

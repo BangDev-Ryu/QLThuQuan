@@ -16,5 +16,7 @@ namespace QLThuQuan.GUI
         {
             InitializeComponent();
         }
+
+        
     }
 }

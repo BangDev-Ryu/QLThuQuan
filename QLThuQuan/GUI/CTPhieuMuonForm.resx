@@ -117,41 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="panel2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAQRJREFUSEvt
-        lK2OAjEUhcdC1pHVrOANURgWwcvsA6B4AVaAQYFYtQpDQsZ/pJkWbs/0h4DlU9Oec8/tNLltmjevAnwA
-        P/RZAWP1FwmVZv0fZyY5xSkFTNHQfDuWCe9MPF/q6SEFjp16FOAvmFXrEWdzyOmJ/b2Xytd1z45RPa7q
-        MPb8VRlThOpxVQcw9/JatYcpNXDU9Cq1gJpeBWh9Rquao9ogGICBaoFSk1Cs+zeAX++ZqmZJNTGDt4rd
-        BmDkTflTeHyThVkHyu8TcPbGo2o5zDSXB83h7t+cZqO6Yqa4+tc3gE/TxPGd8ITBCuQnOAdwkZAU9Wsp
-        AUyAraa6J+GpU79RrvUfQfIZ1cqUAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="panel4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAHhJREFUSEvt
-        zTEOwCAMQ1GO1vtfKl2MpaSyHJUBBt7oftIxruNExBOL6s2kxn/Um0krWnHMD2an1J5sAPncV+3JBqA6
-        tZMNQHVqJxuA6tRONgDVqZ1sAKpTO9kAVKd2sgGoTu384HT7fL3xYOr2+XrjwdTt8/VrpxeDAGT4v8Oj
-        FAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="panel6.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAQRJREFUSEvt
-        lK2OAjEUhcdC1pHVrOANURgWwcvsA6B4AVaAQYFYtQpDQsZ/pJkWbs/0h4DlU9Oec8/tNLltmjevAnwA
-        P/RZAWP1FwmVZv0fZyY5xSkFTNHQfDuWCe9MPF/q6SEFjp16FOAvmFXrEWdzyOmJ/b2Xytd1z45RPa7q
-        MPb8VRlThOpxVQcw9/JatYcpNXDU9Cq1gJpeBWh9Rquao9ogGICBaoFSk1Cs+zeAX++ZqmZJNTGDt4rd
-        BmDkTflTeHyThVkHyu8TcPbGo2o5zDSXB83h7t+cZqO6Yqa4+tc3gE/TxPGd8ITBCuQnOAdwkZAU9Wsp
-        AUyAraa6J+GpU79RrvUfQfIZ1cqUAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="panel8.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAH1JREFUSEvt
-        lDEOgDAMA/uU/n/mf0EZjKqAdEmjbtzYc+2lMMZPBzObxsx4L0WyXNRGQvkVvXBXHsmWi9IIlUt8nOdG
-        ltCr3JGM5846Et0DBboeA12Pga7HQNdzAMD7GADwvgInn+nZD82hkUipXGRHtsrF0d+1SI7slf+IGw+J
-        J8OO0I0qAAAAAElFTkSuQmCC
-</value>
-  </data>
+  <metadata name="idPhieuMuonTable.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="id_ThietBiTable.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>
