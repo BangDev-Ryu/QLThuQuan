@@ -229,6 +229,7 @@
             this.Name = "ThietBiFormControl";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThietBiFormControl";
+            this.Load += new System.EventHandler(this.ThietBiFormControl_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);

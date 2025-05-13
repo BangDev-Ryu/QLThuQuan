@@ -11,7 +11,7 @@ namespace QLThuQuan.BLL
     class ViPhamBLL
     {
         private ViPhamDAL viPhamDAL = new ViPhamDAL();
-        public List<ViPham> GetViPhams()
+        public List<ViPham> GetViPham()
         {
             return viPhamDAL.GetAllViPham();
         }
