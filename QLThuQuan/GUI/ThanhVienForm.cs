@@ -151,7 +151,7 @@ namespace QLThuQuan.GUI
             {
                 if (formAdd.ShowDialog() == DialogResult.OK)
                 {
-                    int ID = int.Parse(formAdd.IDInput);
+                    int ID = formAdd.IDInput;
                     string Password = formAdd.PasswordInput;
 
                     ThanhVien tv = thanhVienBLL.GetThanhVienByID(ID);

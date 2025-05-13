@@ -23,6 +23,7 @@ namespace QLThuQuan.GUI
             InitializeComponent();
             InitializeDataGridView();
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
         }
 
         private void InitializeDataGridView()

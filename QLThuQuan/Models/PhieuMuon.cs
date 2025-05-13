@@ -14,13 +14,13 @@ namespace QLThuQuan.Models
         public string trangThai { get; set; }
         public string loai { get; set; }
         public DateTime ngayMuon { get; set; }
-        public DateTime ngayTra { get; set; }
+        public DateTime ngayHanTra { get; set; }
         public bool isExist { get; set; }
 
         public PhieuMuon() { }
 
         public PhieuMuon(int id, int id_thietBi, int id_thanhVien, 
-            string trangThai, string loai, DateTime ngayMuon, DateTime ngayTra, bool isExist)
+            string trangThai, string loai, DateTime ngayMuon, DateTime ngayHanTra, bool isExist)
         {
             this.id = id;
             this.id_thietBi = id_thietBi;
@@ -28,7 +28,7 @@ namespace QLThuQuan.Models
             this.trangThai = trangThai;
             this.loai = loai;
             this.ngayMuon = ngayMuon;
-            this.ngayTra = ngayTra;
+            this.ngayHanTra = ngayHanTra;
             this.isExist = isExist;
         }
     }

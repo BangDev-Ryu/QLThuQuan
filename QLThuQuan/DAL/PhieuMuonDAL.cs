@@ -16,8 +16,6 @@ namespace QLThuQuan.DAL
             string query = "SELECT * FROM phieu_muon WHERE is_exist = 1";
             using (var conn = DBConnect.GetConnection())
             {
-                conn.Open(); // Đảm bảo mở kết nối
-
                 using (var cmd = new MySqlCommand(query, conn))
                 using (var reader = cmd.ExecuteReader())
                 {
@@ -30,7 +28,7 @@ namespace QLThuQuan.DAL
                             reader.GetString("trang_thai"),
                             reader.GetString("loai"),
                             reader.GetDateTime("ngay_muon"),
-                            reader.GetDateTime("ngay_tra"),
+                            reader.GetDateTime("ngay_han_tra"),
                             reader.GetBoolean("is_exist")
                         ));
                     }
@@ -40,16 +38,14 @@ namespace QLThuQuan.DAL
             return list;
         }
 
-        public int AddPhieuMuon(PhieuMuon phieuMuon)
+        public bool AddPhieuMuon(PhieuMuon phieuMuon)
         {
             string query = @"INSERT INTO phieu_muon 
-                (id_thiet_bi, id_thanh_vien, trang_thai, loai, ngay_muon, ngay_tra, is_exist) 
-                VALUES (@id_thiet_bi, @id_thanh_vien, @trang_thai, @loai, @ngay_muon, @ngay_tra, @is_exist)";
+                (id_thiet_bi, id_thanh_vien, trang_thai, loai, ngay_muon, ngay_han_tra, is_exist) 
+                VALUES (@id_thiet_bi, @id_thanh_vien, @trang_thai, @loai, @ngay_muon, @ngay_han_tra, @is_exist)";
 
             using (var conn = DBConnect.GetConnection())
             {
-                conn.Open(); // Mở kết nối
-
                 using (var cmd = new MySqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@id_thiet_bi", phieuMuon.id_thietBi);
@@ -57,13 +53,35 @@ namespace QLThuQuan.DAL
                     cmd.Parameters.AddWithValue("@trang_thai", phieuMuon.trangThai);
                     cmd.Parameters.AddWithValue("@loai", phieuMuon.loai);
                     cmd.Parameters.AddWithValue("@ngay_muon", phieuMuon.ngayMuon);
-                    cmd.Parameters.AddWithValue("@ngay_tra", phieuMuon.ngayTra);
+                    cmd.Parameters.AddWithValue("@ngay_han_tra", phieuMuon.ngayHanTra);
                     cmd.Parameters.AddWithValue("@is_exist", phieuMuon.isExist);
 
-                    cmd.ExecuteNonQuery();
-                    return (int)cmd.LastInsertedId;
+                    return cmd.ExecuteNonQuery() > 0;
                 }
             }
         }
+
+        public bool UpdateTrangThaiVaNgayTraByID(int id_thietBi, string trangThai, DateTime ngayHanTra)
+        {
+            string query = @"UPDATE phieu_muon 
+                     SET trang_thai = @trang_thai, ngay_han_tra = @ngay_han_tra
+                     WHERE id_thiet_bi = @id_thiet_bi";
+
+            using (var conn = DBConnect.GetConnection())
+            {
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@trang_thai", trangThai);
+                    cmd.Parameters.AddWithValue("@ngay_han_tra", ngayHanTra);
+                    cmd.Parameters.AddWithValue("@id_thiet_bi", id_thietBi);
+
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+
+
     }
 }
+
+
