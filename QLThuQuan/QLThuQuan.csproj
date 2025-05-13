@@ -99,12 +99,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\CTPhieuMuon.cs" />
     <Compile Include="BLL\PhieuMuonBLL.cs" />
     <Compile Include="BLL\ThanhVienBLL.cs" />
     <Compile Include="BLL\ThietBiBLL.cs" />
     <Compile Include="BLL\ViPhamBLL.cs" />
-    <Compile Include="DAL\CTPhieuMuonDAL.cs" />
     <Compile Include="DAL\PhieuMuonDAL.cs" />
     <Compile Include="DAL\ThanhVienDAL.cs" />
     <Compile Include="DAL\ThietBiDAL.cs" />
@@ -121,12 +119,6 @@
     </Compile>
     <Compile Include="GUI\AddLuotVaoForm.Designer.cs">
       <DependentUpon>AddLuotVaoForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\CTPhieuMuonForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\CTPhieuMuonForm.Designer.cs">
-      <DependentUpon>CTPhieuMuonForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\MainForm.cs">
       <SubType>Form</SubType>
@@ -188,7 +180,6 @@
     <Compile Include="GUI\ViPhamForm.Designer.cs">
       <DependentUpon>ViPhamForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\CTPhieuMuon.cs" />
     <Compile Include="Models\PhieuMuon.cs" />
     <Compile Include="Models\ThanhVien.cs" />
     <Compile Include="Models\ThietBi.cs" />
@@ -197,9 +188,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\AddLuotVaoForm.resx">
       <DependentUpon>AddLuotVaoForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\CTPhieuMuonForm.resx">
-      <DependentUpon>CTPhieuMuonForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

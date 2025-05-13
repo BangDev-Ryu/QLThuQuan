@@ -32,14 +32,14 @@ namespace QLThuQuan.BLL
             return thanhVienDAL.DeleteThanhVien(id);
         }
 
-        public ThanhVien GetThanhVienByUserName(string username)
+        public ThanhVien GetThanhVienByID(int id)
         {
-            return thanhVienDAL.getThanhVienByUserName(username);
+            return thanhVienDAL.getThanhVienByID(id);
         }
 
-        public int checkLogin(string username, string password)
+        public int checkLogin(int id, string password)
         {
-            ThanhVien tv = thanhVienDAL.getThanhVienByUserName(username);
+            ThanhVien tv = thanhVienDAL.getThanhVienByID(id);
 
             if (tv == null)
             {

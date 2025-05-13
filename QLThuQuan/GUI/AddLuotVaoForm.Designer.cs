@@ -34,7 +34,7 @@ namespace QLThuQuan.GUI
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -42,19 +42,18 @@ namespace QLThuQuan.GUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(188, 43);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(251, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 13);
+            this.label1.Size = new System.Drawing.Size(180, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Hãy nhập thông tin thành viên";
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(170, 140);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSubmit.Location = new System.Drawing.Point(227, 172);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(76, 24);
+            this.btnSubmit.Size = new System.Drawing.Size(101, 30);
             this.btnSubmit.TabIndex = 2;
             this.btnSubmit.Text = "Xác nhận";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -62,10 +61,10 @@ namespace QLThuQuan.GUI
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(263, 140);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClose.Location = new System.Drawing.Point(351, 172);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 24);
+            this.btnClose.Size = new System.Drawing.Size(100, 30);
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "Hủy";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -74,50 +73,51 @@ namespace QLThuQuan.GUI
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(90, 72);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(120, 89);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 13);
+            this.label3.Size = new System.Drawing.Size(20, 16);
             this.label3.TabIndex = 5;
-            this.label3.Text = "UserName";
+            this.label3.Text = "ID";
             // 
-            // txtUserName
+            // txtID
             // 
-            this.txtUserName.Location = new System.Drawing.Point(149, 70);
-            this.txtUserName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(230, 20);
-            this.txtUserName.TabIndex = 6;
+            this.txtID.Location = new System.Drawing.Point(199, 86);
+            this.txtID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(305, 22);
+            this.txtID.TabIndex = 6;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(90, 102);
+            this.label2.Location = new System.Drawing.Point(120, 126);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.Size = new System.Drawing.Size(67, 16);
             this.label2.TabIndex = 7;
             this.label2.Text = "Password";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(149, 99);
+            this.txtPassword.Location = new System.Drawing.Point(199, 122);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(230, 20);
+            this.txtPassword.Size = new System.Drawing.Size(305, 22);
             this.txtPassword.TabIndex = 8;
             // 
             // AddLuotVaoForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(465, 227);
+            this.ClientSize = new System.Drawing.Size(620, 279);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtUserName);
+            this.Controls.Add(this.txtID);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AddLuotVaoForm";
             this.Text = "AddLuotVaoForm";
             this.ResumeLayout(false);
@@ -133,7 +133,7 @@ namespace QLThuQuan.GUI
         private EventHandler buttonSubmit_Click;
         private EventHandler label1_Click;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPassword;
     }
