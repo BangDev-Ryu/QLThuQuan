@@ -14,12 +14,18 @@ namespace QLThuQuan.BLL
 
         public List<PhieuMuon> GetPhieuMuons()
         {
-            return phieuMuonDAL.GetAllPhieuMuon ();
+            return phieuMuonDAL.GetAllPhieuMuon();
         }
 
-       public int AddPhieuMuon(PhieuMuon phieuMuon)
+        public bool AddPhieuMuon(PhieuMuon phieuMuon)
         {
-            return phieuMuonDAL.AddPhieuMuon (phieuMuon);
+            return phieuMuonDAL.AddPhieuMuon(phieuMuon);
+        }
+
+        public bool UpdateTrangThaiVaNgayTraByID(int id_thietBi, string trangThai, DateTime ngayHanTra)
+        {
+            return phieuMuonDAL.UpdateTrangThaiVaNgayTraByID(id_thietBi, trangThai, ngayHanTra);
         }
     }
 }
+
