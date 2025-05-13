@@ -112,15 +112,15 @@ namespace QLThuQuan.DAL
             }
         }
 
-        public ThanhVien getThanhVienByUserName(string username)
+        public ThanhVien getThanhVienByID(int id)
         {
-            string query = "SELECT * FROM thanh_vien WHERE username = @username";
+            string query = "SELECT * FROM thanh_vien WHERE id = @id";
 
             using (var conn = DBConnect.GetConnection())
             {
                 using (var cmd = new MySqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@id", id);
                     using (var reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())

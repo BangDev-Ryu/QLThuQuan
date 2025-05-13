@@ -82,15 +82,7 @@ namespace QLThuQuan.GUI
 
                 int idPhieuMuonMoi = phieuMuonBLL.AddPhieuMuon(phieuMuon);
 
-                CTPhieuMuonBLL CTPhieuMuonBLL = new CTPhieuMuonBLL();
-                CTPhieuMuon CTphieuMuon = new CTPhieuMuon
-                {
-                    idPhieuMuon = idPhieuMuonMoi,
-                    idThietBi = tbID
-                };
-
-                CTPhieuMuonBLL.AddCTPhieuMuon(CTphieuMuon);
-
+      
                 LoadData();
                 MessageBox.Show("Đã mượn thiết bị thành công.");
             }
@@ -110,12 +102,7 @@ namespace QLThuQuan.GUI
             }
         }
 
-        private void btnCTPhieuMuon_Click(object sender, EventArgs e)
-        {
-            CTPhieuMuonForm ct = new CTPhieuMuonForm();
-            ct.StartPosition = FormStartPosition.CenterParent;
-            ct.ShowDialog();
-        }
+      
     }
     }
 

@@ -36,7 +36,6 @@
             this.ngayMuonTable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnMuon = new System.Windows.Forms.Button();
             this.btnTra = new System.Windows.Forms.Button();
-            this.btnCTPhieuMuon = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablePhieuMuon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,22 +109,11 @@
             this.btnTra.UseVisualStyleBackColor = true;
             this.btnTra.Click += new System.EventHandler(this.btnTra_Click);
             // 
-            // btnCTPhieuMuon
-            // 
-            this.btnCTPhieuMuon.Location = new System.Drawing.Point(608, 23);
-            this.btnCTPhieuMuon.Name = "btnCTPhieuMuon";
-            this.btnCTPhieuMuon.Size = new System.Drawing.Size(110, 52);
-            this.btnCTPhieuMuon.TabIndex = 3;
-            this.btnCTPhieuMuon.Text = "Xem chi tiết phiếu mượn";
-            this.btnCTPhieuMuon.UseVisualStyleBackColor = true;
-            this.btnCTPhieuMuon.Click += new System.EventHandler(this.btnCTPhieuMuon_Click);
-            // 
             // PhieuMuonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 645);
-            this.Controls.Add(this.btnCTPhieuMuon);
             this.Controls.Add(this.btnTra);
             this.Controls.Add(this.btnMuon);
             this.Controls.Add(this.tablePhieuMuon);
@@ -148,6 +136,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn trangThaiTable;
         private System.Windows.Forms.DataGridViewTextBoxColumn loaiTable;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayMuonTable;
-        private System.Windows.Forms.Button btnCTPhieuMuon;
     }
 }

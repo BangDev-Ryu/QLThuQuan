@@ -104,8 +104,7 @@
             // 
             this.cmbLoai.FormattingEnabled = true;
             this.cmbLoai.Items.AddRange(new object[] {
-            "Mượn thiết bị",
-            "Đặt chỗ"});
+            "Mượn thiết bị"});
             this.cmbLoai.Location = new System.Drawing.Point(175, 192);
             this.cmbLoai.Name = "cmbLoai";
             this.cmbLoai.Size = new System.Drawing.Size(233, 24);

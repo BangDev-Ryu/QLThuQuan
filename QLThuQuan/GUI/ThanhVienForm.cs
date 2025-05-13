@@ -151,11 +151,11 @@ namespace QLThuQuan.GUI
             {
                 if (formAdd.ShowDialog() == DialogResult.OK)
                 {
-                    string UserName = formAdd.UserNameInput;
+                    int ID = int.Parse(formAdd.IDInput);
                     string Password = formAdd.PasswordInput;
 
-                    ThanhVien tv = thanhVienBLL.GetThanhVienByUserName(UserName);
-                    int checkLog = thanhVienBLL.checkLogin(UserName, Password);
+                    ThanhVien tv = thanhVienBLL.GetThanhVienByID(ID);
+                    int checkLog = thanhVienBLL.checkLogin(ID, Password);
 
                     if (checkLog == 0)
                     {
