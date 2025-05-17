@@ -118,5 +118,25 @@ namespace QLThuQuan.DAL
             }
             return listThietBi;
         }
+
+        public bool UpdateTrangThaiByID(int id_thietBi, string trangThai)
+        {
+            string query = @"UPDATE thiet_bi 
+                     SET trang_thai = @trang_thai
+                     WHERE id = @id";
+
+            using (var conn = DBConnect.GetConnection())
+            {
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@trang_thai", trangThai);
+                    cmd.Parameters.AddWithValue("@id", id_thietBi);
+
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+
+
     }
 }

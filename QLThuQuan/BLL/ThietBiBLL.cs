@@ -27,6 +27,11 @@ namespace QLThuQuan.BLL
             return thietBiDAL.updateThietBi(thietBi);
         }
 
+        public bool UpdateTrangThaiByID(int id_thietBi, string trangThai)
+        {
+            return thietBiDAL.UpdateTrangThaiByID(id_thietBi, trangThai);
+        }
+
         public bool DeleteThietBi(int id)
         {
             return thietBiDAL.deleteThietBi(id);

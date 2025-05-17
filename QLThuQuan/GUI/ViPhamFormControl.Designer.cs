@@ -34,16 +34,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.txtIdThanhVien = new System.Windows.Forms.TextBox();
-            this.txtHinhThuc = new System.Windows.Forms.TextBox();
             this.txtTien = new System.Windows.Forms.TextBox();
-            this.dtNgayPhat = new System.Windows.Forms.TextBox();
-            this.dtNgayHetHan = new System.Windows.Forms.TextBox();
             this.txtLyDo = new System.Windows.Forms.TextBox();
-            this.txtTrangThai = new System.Windows.Forms.TextBox();
             this.save_btn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.txtHinhThuc = new System.Windows.Forms.ComboBox();
+            this.dtNgayPhat = new System.Windows.Forms.DateTimePicker();
+            this.dtNgayHetHan = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -118,18 +116,6 @@
             this.label6.Text = "Lý do";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(72, 232);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 18);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Tình trạng";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
             // txtIdThanhVien
             // 
             this.txtIdThanhVien.Location = new System.Drawing.Point(255, 46);
@@ -138,13 +124,6 @@
             this.txtIdThanhVien.TabIndex = 7;
             this.txtIdThanhVien.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // txtHinhThuc
-            // 
-            this.txtHinhThuc.Location = new System.Drawing.Point(255, 76);
-            this.txtHinhThuc.Name = "txtHinhThuc";
-            this.txtHinhThuc.Size = new System.Drawing.Size(282, 24);
-            this.txtHinhThuc.TabIndex = 8;
-            // 
             // txtTien
             // 
             this.txtTien.Location = new System.Drawing.Point(255, 106);
@@ -152,33 +131,12 @@
             this.txtTien.Size = new System.Drawing.Size(282, 24);
             this.txtTien.TabIndex = 9;
             // 
-            // dtNgayPhat
-            // 
-            this.dtNgayPhat.Location = new System.Drawing.Point(255, 136);
-            this.dtNgayPhat.Name = "dtNgayPhat";
-            this.dtNgayPhat.Size = new System.Drawing.Size(282, 24);
-            this.dtNgayPhat.TabIndex = 10;
-            // 
-            // dtNgayHetHan
-            // 
-            this.dtNgayHetHan.Location = new System.Drawing.Point(255, 166);
-            this.dtNgayHetHan.Name = "dtNgayHetHan";
-            this.dtNgayHetHan.Size = new System.Drawing.Size(282, 24);
-            this.dtNgayHetHan.TabIndex = 11;
-            // 
             // txtLyDo
             // 
             this.txtLyDo.Location = new System.Drawing.Point(255, 196);
             this.txtLyDo.Name = "txtLyDo";
             this.txtLyDo.Size = new System.Drawing.Size(282, 24);
             this.txtLyDo.TabIndex = 12;
-            // 
-            // txtTrangThai
-            // 
-            this.txtTrangThai.Location = new System.Drawing.Point(255, 226);
-            this.txtTrangThai.Name = "txtTrangThai";
-            this.txtTrangThai.Size = new System.Drawing.Size(282, 24);
-            this.txtTrangThai.TabIndex = 13;
             // 
             // save_btn
             // 
@@ -200,21 +158,49 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // txtHinhThuc
+            // 
+            this.txtHinhThuc.FormattingEnabled = true;
+            this.txtHinhThuc.Items.AddRange(new object[] {
+            "Khóa thẻ 1 tháng",
+            "Khóa thẻ 2 tháng",
+            "Khóa thẻ 3 tháng",
+            "Khóa thẻ 4 tháng",
+            "Khóa thẻ 5 tháng",
+            "Khóa thẻ 6 tháng",
+            "Bồi thường"});
+            this.txtHinhThuc.Location = new System.Drawing.Point(255, 74);
+            this.txtHinhThuc.Name = "txtHinhThuc";
+            this.txtHinhThuc.Size = new System.Drawing.Size(282, 26);
+            this.txtHinhThuc.TabIndex = 16;
+            // 
+            // dtNgayPhat
+            // 
+            this.dtNgayPhat.Location = new System.Drawing.Point(255, 136);
+            this.dtNgayPhat.Name = "dtNgayPhat";
+            this.dtNgayPhat.Size = new System.Drawing.Size(282, 24);
+            this.dtNgayPhat.TabIndex = 17;
+            // 
+            // dtNgayHetHan
+            // 
+            this.dtNgayHetHan.Location = new System.Drawing.Point(255, 166);
+            this.dtNgayHetHan.Name = "dtNgayHetHan";
+            this.dtNgayHetHan.Size = new System.Drawing.Size(282, 24);
+            this.dtNgayHetHan.TabIndex = 18;
+            // 
             // ViPhamFormControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 347);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.save_btn);
-            this.Controls.Add(this.txtTrangThai);
-            this.Controls.Add(this.txtLyDo);
             this.Controls.Add(this.dtNgayHetHan);
             this.Controls.Add(this.dtNgayPhat);
-            this.Controls.Add(this.txtTien);
             this.Controls.Add(this.txtHinhThuc);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.save_btn);
+            this.Controls.Add(this.txtLyDo);
+            this.Controls.Add(this.txtTien);
             this.Controls.Add(this.txtIdThanhVien);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -239,15 +225,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtIdThanhVien;
-        private System.Windows.Forms.TextBox txtHinhThuc;
         private System.Windows.Forms.TextBox txtTien;
-        private System.Windows.Forms.TextBox dtNgayPhat;
-        private System.Windows.Forms.TextBox dtNgayHetHan;
         private System.Windows.Forms.TextBox txtLyDo;
-        private System.Windows.Forms.TextBox txtTrangThai;
         private System.Windows.Forms.Button save_btn;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox txtHinhThuc;
+        private System.Windows.Forms.DateTimePicker dtNgayPhat;
+        private System.Windows.Forms.DateTimePicker dtNgayHetHan;
     }
 }
