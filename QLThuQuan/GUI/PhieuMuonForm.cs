@@ -18,6 +18,7 @@ namespace QLThuQuan.GUI
     {
         private PhieuMuonBLL phieuMuonBLL = new PhieuMuonBLL();
         private ThanhVienBLL thanhVienBLL = new ThanhVienBLL();
+        private ThietBiBLL thietBiBLL = new ThietBiBLL();
 
 
 
@@ -99,6 +100,7 @@ namespace QLThuQuan.GUI
                         else if (thisPhieuMuon.trangThai == "Đã trả" || thisPhieuMuon.trangThai == "Có sẵn")
                         {
                             phieuMuonBLL.AddPhieuMuon(phieuMuon);
+                            thietBiBLL.UpdateTrangThaiByID(tbID, trangThaiInput);
                             LoadData();
                             MessageBox.Show($"Mượn thiết bị {tbID} thành công lúc {ngayMuonInput:HH:mm:ss dd/MM/yyyy}", "Thông báo");
                         }
@@ -106,6 +108,7 @@ namespace QLThuQuan.GUI
                     else
                     {
                         phieuMuonBLL.AddPhieuMuon(phieuMuon);
+                        thietBiBLL.UpdateTrangThaiByID(tbID, trangThaiInput);
                         LoadData();
                         MessageBox.Show($"Mượn thiết bị {tbID} thành công lúc {ngayMuonInput:HH:mm:ss dd/MM/yyyy}", "Thông báo");
                     }
@@ -138,6 +141,7 @@ namespace QLThuQuan.GUI
                     if (thisPhieuMuon.trangThai == "Đang mượn")
                     {
                         phieuMuonBLL.UpdateTrangThaiVaNgayTraByID(tbID, trangThai, timeTra);
+                        thietBiBLL.UpdateTrangThaiByID(tbID, "Có sẵn");
                         LoadData();
                         MessageBox.Show($"Đã trả thiết bị {tbID} lúc {timeTra:HH:mm:ss dd/MM/yyyy}", "Thông báo");
                     }
