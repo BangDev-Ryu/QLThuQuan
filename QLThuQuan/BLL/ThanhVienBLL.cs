@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 using QLThuQuan.DAL;
+using QLThuQuan.DB;
 using QLThuQuan.Models;
 
 namespace QLThuQuan.BLL
@@ -30,6 +32,11 @@ namespace QLThuQuan.BLL
         public bool DeleteThanhVien(int id)
         {
             return thanhVienDAL.DeleteThanhVien(id);
+        }
+
+        public List<ThanhVien> SearchThanhVien(string keyword)
+        {
+            return thanhVienDAL.SearchThanhVien(keyword);
         }
 
         public ThanhVien GetThanhVienByID(int id)
