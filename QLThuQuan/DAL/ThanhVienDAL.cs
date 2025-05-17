@@ -119,7 +119,6 @@ namespace QLThuQuan.DAL
             string query = @"SELECT * FROM thanh_vien  
                      WHERE (id LIKE @keyword
                             OR username LIKE @keyword 
-                            OR password LIKE @keyword
                             OR fullname LIKE @keyword 
                             OR khoa LIKE @keyword 
                             OR nganh LIKE @keyword)

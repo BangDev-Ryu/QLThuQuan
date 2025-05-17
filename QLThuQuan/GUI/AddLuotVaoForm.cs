@@ -57,7 +57,7 @@ namespace QLThuQuan.GUI
                         return;
                     }
 
-                    if (tv.trangThai == "Đang vi phạm")
+                    if (tv.trangThai == "Khóa")
                     {
                         MessageBox.Show("Thành viên đang bị xử lý vi phạm.");
                         return;
