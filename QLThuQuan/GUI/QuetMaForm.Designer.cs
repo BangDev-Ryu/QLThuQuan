@@ -48,8 +48,8 @@
             this.Controls.Add(this.pictureBoxCamera);
             this.Name = "QuetMaForm";
             this.Text = "QuetMaForm";
-            this.Load += new System.EventHandler(this.QuetMaForm_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QuetMaForm_FormClosing);
+            this.Load += new System.EventHandler(this.QuetMaForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCamera)).EndInit();
             this.ResumeLayout(false);
 

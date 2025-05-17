@@ -24,7 +24,6 @@ namespace QLThuQuan.GUI
         {
             try
             {
-                // Tìm tất cả thiết bị video (camera)
                 videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
                 if (videoDevices.Count == 0)
                 {
@@ -33,7 +32,6 @@ namespace QLThuQuan.GUI
                     return;
                 }
 
-                // Lấy camera đầu tiên
                 videoSource = new VideoCaptureDevice(videoDevices[0].MonikerString);
                 videoSource.NewFrame += video_NewFrame;
                 videoSource.Start();
@@ -74,13 +72,9 @@ namespace QLThuQuan.GUI
                 {
                     Invoke(new MethodInvoker(delegate
                     {
-                        string[] credentials = result.Text.Split(',');
-                        if (credentials.Length == 2 &&
-                            int.TryParse(credentials[0].Trim(), out int id) &&
-                            !string.IsNullOrEmpty(credentials[1].Trim()))
+                        if (int.TryParse(result.Text.Trim(), out int id))
                         {
                             IDInput = id;
-                            PasswordInput = credentials[1].Trim();
 
                             StopCamera();
                             this.DialogResult = DialogResult.OK;
@@ -88,8 +82,9 @@ namespace QLThuQuan.GUI
                         }
                         else
                         {
-                            MessageBox.Show("Định dạng mã không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Mã QR không hợp lệ. Không thể đọc ID.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
+
                     }));
                 }
             }
@@ -114,6 +109,6 @@ namespace QLThuQuan.GUI
             StopCamera();
         }
 
-
+        
     }
 }
