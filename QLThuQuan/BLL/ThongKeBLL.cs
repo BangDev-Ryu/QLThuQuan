@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using QLThuQuan.DAL;
+using QLThuQuan.DB;
 using QLThuQuan.Models;
 
 namespace QLThuQuan.BLL
@@ -32,7 +33,6 @@ namespace QLThuQuan.BLL
             return viPhamDAL.GetAllViPham().Count(x => x.TrangThai == "Chưa xử lý");
         }
 
-        // Trả về Dictionary<int, int> : ID thành viên - số lượt vào trong khoảng thời gian
         public Dictionary<int, int> GetLuotVaoTheoThoiGian(DateTime start, DateTime end)
         {
             var result = new Dictionary<int, int>();
@@ -62,7 +62,6 @@ namespace QLThuQuan.BLL
             return result;
         }
 
-        // Trả về Dictionary<string, int> : Tên khoa - số lượt vào
         public Dictionary<string, int> GetLuotVaoTheoKhoa()
         {
             var result = new Dictionary<string, int>();
@@ -89,7 +88,6 @@ namespace QLThuQuan.BLL
             return result;
         }
 
-        // Trả về Dictionary<int, int> : ID thành viên - số lượt vào (chỉ thành viên thuộc khoa được chọn)
         public Dictionary<int, int> GetLuotVaoTheoThanhVienKhoa(string khoa)
         {
             var result = new Dictionary<int, int>();
