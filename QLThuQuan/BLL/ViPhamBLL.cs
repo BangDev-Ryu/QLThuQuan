@@ -27,5 +27,10 @@ namespace QLThuQuan.BLL
         {
             return viPhamDAL.DeleteViPham(id);
         }
+
+        public List<ViPham> SearchViPhamById(string id)
+        {
+            return viPhamDAL.SearchViPhamById(id);
+        }
     }
 }

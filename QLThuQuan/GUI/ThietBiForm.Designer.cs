@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.tableThietBi = new System.Windows.Forms.DataGridView();
-            this.addBtn = new System.Windows.Forms.Button();
-            this.EditBtn = new System.Windows.Forms.Button();
-            this.deleteBtn = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.trangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.addBtn = new System.Windows.Forms.Button();
+            this.EditBtn = new System.Windows.Forms.Button();
+            this.deleteBtn = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnImportExcel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tableThietBi)).BeginInit();
             this.panel1.SuspendLayout();
@@ -58,12 +58,41 @@
             this.tableThietBi.Location = new System.Drawing.Point(74, 115);
             this.tableThietBi.Margin = new System.Windows.Forms.Padding(2);
             this.tableThietBi.Name = "tableThietBi";
+            this.tableThietBi.ReadOnly = true;
             this.tableThietBi.RowHeadersVisible = false;
             this.tableThietBi.RowTemplate.Height = 24;
             this.tableThietBi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tableThietBi.Size = new System.Drawing.Size(904, 512);
             this.tableThietBi.TabIndex = 0;
             this.tableThietBi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 226;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Tên thiết bị";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.Width = 226;
+            // 
+            // loai
+            // 
+            this.loai.HeaderText = "Loại thiết bị";
+            this.loai.Name = "loai";
+            this.loai.ReadOnly = true;
+            this.loai.Width = 226;
+            // 
+            // trangThai
+            // 
+            this.trangThai.HeaderText = "Trạng thái";
+            this.trangThai.Name = "trangThai";
+            this.trangThai.ReadOnly = true;
+            this.trangThai.Width = 226;
             // 
             // addBtn
             // 
@@ -109,46 +138,15 @@
             this.panel1.Size = new System.Drawing.Size(403, 47);
             this.panel1.TabIndex = 6;
             // 
-            // label1
+            // btnRefresh
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 15);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Tìm kiếm";
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(65, 16);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(158, 20);
-            this.txtSearch.TabIndex = 4;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.Width = 226;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Tên thiết bị";
-            this.name.Name = "name";
-            this.name.Width = 226;
-            // 
-            // loai
-            // 
-            this.loai.HeaderText = "Loại thiết bị";
-            this.loai.Name = "loai";
-            this.loai.Width = 226;
-            // 
-            // trangThai
-            // 
-            this.trangThai.HeaderText = "Trạng thái";
-            this.trangThai.Name = "trangThai";
-            this.trangThai.Width = 226;
+            this.btnRefresh.Location = new System.Drawing.Point(323, 7);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 37);
+            this.btnRefresh.TabIndex = 7;
+            this.btnRefresh.Text = "Tải lại";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnSearch
             // 
@@ -160,15 +158,22 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // btnRefresh
+            // label1
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(323, 7);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 37);
-            this.btnRefresh.TabIndex = 7;
-            this.btnRefresh.Text = "Tải lại";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 15);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Tìm kiếm";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(65, 16);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(158, 20);
+            this.txtSearch.TabIndex = 4;
             // 
             // btnImportExcel
             // 

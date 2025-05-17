@@ -34,7 +34,6 @@ namespace QLThuQuan.GUI
             ngayhethan.DataPropertyName = "ngayhethan";
             lydo.DataPropertyName = "lydo";
             trangthai.DataPropertyName = "trangthai";
-            isexist.DataPropertyName = "isexist";
         }
         public void LoadData()
         {
@@ -58,32 +57,19 @@ namespace QLThuQuan.GUI
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            string input = txtSearch.Text.Trim();
-            List<ViPham> danhSachViPham = viPhamBLL.GetViPham();
+            string id = txtSearch.Text.Trim();
 
-            if (input != "")
+            if (string.IsNullOrEmpty(id))
             {
-                int id;
-                if (int.TryParse(input, out id))
-                {
-                    List<ViPham> list = new List<ViPham>();
-
-                    foreach (ViPham vp in danhSachViPham)
-                    {
-                        if (vp.IdThanhVien == id)
-                        {
-                            list.Add(vp);
-                        }
-                    }
-
-                    danhSachViPham = list;
-                }
+                LoadData();
             }
-
-            tableViPham.DataSource = null;
-            tableViPham.DataSource = danhSachViPham;
-            tableViPham.ClearSelection();
-
+            else
+            {
+                var list = viPhamBLL.SearchViPhamById(id);
+                tableViPham.DataSource = null;
+                tableViPham.DataSource = list;
+                tableViPham.ClearSelection();
+            }
         }
 
         private void edit_btn_Click(object sender, EventArgs e)
