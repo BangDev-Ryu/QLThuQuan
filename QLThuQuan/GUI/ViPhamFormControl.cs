@@ -24,7 +24,6 @@ namespace QLThuQuan.GUI
         public DateTime ngayPhat => DateTime.Parse(dtNgayPhat.Text);
         public DateTime ngayHethan => DateTime.Parse(dtNgayHetHan.Text);
         public string lyDo => txtLyDo.Text;
-        public string trangThai => txtTrangThai.Text;
         public bool isExist => true;
 
         public ViPhamFormControl(ViPham viPham = null)
@@ -39,7 +38,6 @@ namespace QLThuQuan.GUI
                 dtNgayPhat.Text = viPham.NgayPhat.ToString("yyyy-MM-dd");
                 dtNgayHetHan.Text = viPham.NgayHetHan.ToString("yyyy-MM-dd");
                 txtLyDo.Text = viPham.LyDo;
-                txtTrangThai.Text = viPham.TrangThai;
             }
         }
 
@@ -90,7 +88,7 @@ namespace QLThuQuan.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtIdThanhVien.Text) || string.IsNullOrEmpty(txtHinhThuc.Text) || string.IsNullOrEmpty(txtTien.Text) || string.IsNullOrEmpty(dtNgayPhat.Text) || string.IsNullOrEmpty(dtNgayHetHan.Text) || string.IsNullOrEmpty(txtLyDo.Text) || string.IsNullOrEmpty(txtTrangThai.Text))
+            if (string.IsNullOrEmpty(txtIdThanhVien.Text) || string.IsNullOrEmpty(txtHinhThuc.Text) || string.IsNullOrEmpty(txtTien.Text) || string.IsNullOrEmpty(dtNgayPhat.Text) || string.IsNullOrEmpty(dtNgayHetHan.Text) || string.IsNullOrEmpty(txtLyDo.Text) )
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -105,7 +103,7 @@ namespace QLThuQuan.GUI
                 NgayPhat = DateTime.Parse(dtNgayPhat.Text.Trim()),
                 NgayHetHan = DateTime.Parse(dtNgayHetHan.Text.Trim()),
                 LyDo = txtLyDo.Text.Trim(),
-                TrangThai = txtTrangThai.Text.Trim(),
+                TrangThai = "Đang xử lý",
                 IsExist = true
             };
 

@@ -34,11 +34,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.txtIdThanhVien = new System.Windows.Forms.TextBox();
             this.txtTien = new System.Windows.Forms.TextBox();
             this.txtLyDo = new System.Windows.Forms.TextBox();
-            this.txtTrangThai = new System.Windows.Forms.TextBox();
             this.save_btn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.txtHinhThuc = new System.Windows.Forms.ComboBox();
@@ -118,18 +116,6 @@
             this.label6.Text = "Lý do";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(72, 232);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 18);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Tình trạng";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
             // txtIdThanhVien
             // 
             this.txtIdThanhVien.Location = new System.Drawing.Point(255, 46);
@@ -151,13 +137,6 @@
             this.txtLyDo.Name = "txtLyDo";
             this.txtLyDo.Size = new System.Drawing.Size(282, 24);
             this.txtLyDo.TabIndex = 12;
-            // 
-            // txtTrangThai
-            // 
-            this.txtTrangThai.Location = new System.Drawing.Point(255, 226);
-            this.txtTrangThai.Name = "txtTrangThai";
-            this.txtTrangThai.Size = new System.Drawing.Size(282, 24);
-            this.txtTrangThai.TabIndex = 13;
             // 
             // save_btn
             // 
@@ -219,11 +198,9 @@
             this.Controls.Add(this.txtHinhThuc);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.save_btn);
-            this.Controls.Add(this.txtTrangThai);
             this.Controls.Add(this.txtLyDo);
             this.Controls.Add(this.txtTien);
             this.Controls.Add(this.txtIdThanhVien);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -248,11 +225,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtIdThanhVien;
         private System.Windows.Forms.TextBox txtTien;
         private System.Windows.Forms.TextBox txtLyDo;
-        private System.Windows.Forms.TextBox txtTrangThai;
         private System.Windows.Forms.Button save_btn;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox txtHinhThuc;
