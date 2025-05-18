@@ -109,17 +109,17 @@ namespace QLThuQuan.DAL
             }
         }
 
-        public List<ViPham> SearchViPhamByName(string name)
+        public List<ViPham> SearchViPhamById(string id)
         {
             List<ViPham> list = new List<ViPham>();
             string query = @"SELECT * FROM phieu_phat  
-                             WHERE id_thanh_vien LIKE @id_thanh_vien AND is_exist = 1";
+                             WHERE id LIKE @id AND is_exist = 1";
 
             using (var conn = DBConnect.GetConnection())
             {
                 using (var cmd = new MySqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@name", $"%{name}%");
+                    cmd.Parameters.AddWithValue("@id", $"%{id}%");
 
                     using (var reader = cmd.ExecuteReader())
                     {

@@ -112,6 +112,47 @@ namespace QLThuQuan.DAL
             }
         }
 
+        public List<ThanhVien> SearchThanhVien(string keyword)
+        {
+            List<ThanhVien> list = new List<ThanhVien>();
+
+            string query = @"SELECT * FROM thanh_vien  
+                     WHERE (id LIKE @keyword
+                            OR username LIKE @keyword 
+                            OR fullname LIKE @keyword 
+                            OR khoa LIKE @keyword 
+                            OR nganh LIKE @keyword)
+                     AND is_exist = 1";
+
+            using (var conn = DBConnect.GetConnection())
+            {
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@keyword", $"%{keyword}%");
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            list.Add(new ThanhVien
+                            {
+                                id = reader.GetInt32("id"),
+                                username = reader.GetString("username"),
+                                password = reader.GetString("password"),
+                                fullName = reader.GetString("fullname"),
+                                khoa = reader.GetString("khoa"),
+                                nganh = reader.GetString("nganh"),
+                                trangThai = reader.GetString("trang_thai"),
+                                isExist = reader.GetBoolean("is_exist")
+                            });
+                        }
+                    }
+                }
+            }
+
+            return list;
+        }
+
         public ThanhVien getThanhVienByID(int id)
         {
             string query = "SELECT * FROM thanh_vien WHERE id = @id";

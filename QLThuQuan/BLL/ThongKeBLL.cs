@@ -12,15 +12,24 @@ namespace QLThuQuan.BLL
         private ThietBiDAL thietBiDAL = new ThietBiDAL();
         private ViPhamDAL viPhamDAL = new ViPhamDAL();
         private ThanhVienDAL thanhVienDAL = new ThanhVienDAL();
+        private PhieuMuonDAL phieuMuonDAL = new PhieuMuonDAL();
 
         public int GetSoThietBiDangMuon()
         {
-            return thietBiDAL.getAllThietBi().Count(x => x.trangThai == "Đang mượn");
+            return phieuMuonDAL.GetAllPhieuMuon()
+                .Where(x => x.trangThai == "Đang mượn")
+                .Select(x => x.id_thietBi)
+                .Distinct()
+                .Count();
         }
 
         public int GetSoThietBiDaMuon()
         {
-            return thietBiDAL.getAllThietBi().Count(x => x.trangThai != "Có sẵn");
+            return phieuMuonDAL.GetAllPhieuMuon()
+                .Where(x => x.trangThai == "Đã trả")
+                .Select(x => x.id_thietBi)
+                .Distinct()
+                .Count();
         }
 
         public int GetSoViPhamDaXuLy()
@@ -33,6 +42,12 @@ namespace QLThuQuan.BLL
             return viPhamDAL.GetAllViPham().Count(x => x.TrangThai == "Chưa xử lý");
         }
 
+        public int GetTongTienPhat()
+        {
+            return viPhamDAL.GetAllViPham()
+                .Where(x => x.TrangThai == "Đã xử lý")
+                .Sum(x => x.TienBoiThuong);
+        }
         public Dictionary<int, int> GetLuotVaoTheoThoiGian(DateTime start, DateTime end)
         {
             var result = new Dictionary<int, int>();

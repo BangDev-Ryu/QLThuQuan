@@ -28,38 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(1D, 10D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(2D, 6D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(3D, 13D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(4D, 15D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint5 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(5D, 9D);
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint10 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(1D, 10D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint11 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(2D, 6D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint12 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(3D, 13D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint13 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(4D, 15D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint14 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(5D, 9D);
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThongKeForm));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint15 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 14D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint16 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 7D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint17 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 3D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint18 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 10D);
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pnChart = new System.Windows.Forms.Panel();
             this.btnThongKe = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbThietBiDaMuon = new System.Windows.Forms.Label();
-            this.lbNumThietBiDaMuon = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbNumThietBiDaMuon = new System.Windows.Forms.Label();
+            this.lbThietBiDaMuon = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbThietBiDangMuon = new System.Windows.Forms.Label();
+            this.lbTBDangMuon = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.lbTongTienPhat = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbSoViPhamDaXuLy = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbSoViPhamChuaXuLy = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -82,28 +88,28 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Lượt vào";
-            series1.Points.Add(dataPoint1);
-            series1.Points.Add(dataPoint2);
-            series1.Points.Add(dataPoint3);
-            series1.Points.Add(dataPoint4);
-            series1.Points.Add(dataPoint5);
-            this.chart1.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Lượt vào";
+            series3.Points.Add(dataPoint10);
+            series3.Points.Add(dataPoint11);
+            series3.Points.Add(dataPoint12);
+            series3.Points.Add(dataPoint13);
+            series3.Points.Add(dataPoint14);
+            this.chart1.Series.Add(series3);
             this.chart1.Size = new System.Drawing.Size(450, 300);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
-            title1.Name = "LuotVao";
-            title1.Text = "Số lượt vào theo thời gian";
-            this.chart1.Titles.Add(title1);
+            title3.Name = "LuotVao";
+            title3.Text = "Số lượt vào theo thời gian";
+            this.chart1.Titles.Add(title3);
             // 
             // pnChart
             // 
@@ -121,6 +127,7 @@
             this.btnThongKe.TabIndex = 4;
             this.btnThongKe.Text = "Thống kê";
             this.btnThongKe.UseVisualStyleBackColor = true;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
             // panel1
             // 
@@ -133,15 +140,14 @@
             this.panel1.Size = new System.Drawing.Size(200, 100);
             this.panel1.TabIndex = 5;
             // 
-            // lbThietBiDaMuon
+            // panel2
             // 
-            this.lbThietBiDaMuon.AutoSize = true;
-            this.lbThietBiDaMuon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbThietBiDaMuon.Location = new System.Drawing.Point(30, 16);
-            this.lbThietBiDaMuon.Name = "lbThietBiDaMuon";
-            this.lbThietBiDaMuon.Size = new System.Drawing.Size(147, 21);
-            this.lbThietBiDaMuon.TabIndex = 6;
-            this.lbThietBiDaMuon.Text = "Số thiết bị đã mượn";
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(3, 67);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(30, 30);
+            this.panel2.TabIndex = 8;
             // 
             // lbNumThietBiDaMuon
             // 
@@ -153,21 +159,22 @@
             this.lbNumThietBiDaMuon.TabIndex = 7;
             this.lbNumThietBiDaMuon.Text = "0";
             // 
-            // panel2
+            // lbThietBiDaMuon
             // 
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(3, 67);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(30, 30);
-            this.panel2.TabIndex = 8;
+            this.lbThietBiDaMuon.AutoSize = true;
+            this.lbThietBiDaMuon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbThietBiDaMuon.Location = new System.Drawing.Point(27, 16);
+            this.lbThietBiDaMuon.Name = "lbThietBiDaMuon";
+            this.lbThietBiDaMuon.Size = new System.Drawing.Size(147, 21);
+            this.lbThietBiDaMuon.TabIndex = 6;
+            this.lbThietBiDaMuon.Text = "Số thiết bị đã mượn";
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.lbThietBiDangMuon);
+            this.panel3.Controls.Add(this.lbTBDangMuon);
             this.panel3.Location = new System.Drawing.Point(285, 50);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 100);
@@ -182,36 +189,58 @@
             this.panel4.Size = new System.Drawing.Size(30, 30);
             this.panel4.TabIndex = 8;
             // 
-            // label1
+            // lbThietBiDangMuon
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(90, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(19, 21);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "0";
+            this.lbThietBiDangMuon.AutoSize = true;
+            this.lbThietBiDangMuon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbThietBiDangMuon.Location = new System.Drawing.Point(90, 58);
+            this.lbThietBiDangMuon.Name = "lbThietBiDangMuon";
+            this.lbThietBiDangMuon.Size = new System.Drawing.Size(19, 21);
+            this.lbThietBiDangMuon.TabIndex = 7;
+            this.lbThietBiDangMuon.Text = "0";
             // 
-            // label2
+            // lbTBDangMuon
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(18, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(165, 21);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Số thiết bị đang mượn";
+            this.lbTBDangMuon.AutoSize = true;
+            this.lbTBDangMuon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTBDangMuon.Location = new System.Drawing.Point(18, 16);
+            this.lbTBDangMuon.Name = "lbTBDangMuon";
+            this.lbTBDangMuon.Size = new System.Drawing.Size(165, 21);
+            this.lbTBDangMuon.TabIndex = 6;
+            this.lbTBDangMuon.Text = "Số thiết bị đang mượn";
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Goldenrod;
+            this.panel5.Controls.Add(this.lbTongTienPhat);
+            this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.panel6);
-            this.panel5.Controls.Add(this.label3);
+            this.panel5.Controls.Add(this.lbSoViPhamDaXuLy);
             this.panel5.Controls.Add(this.label4);
             this.panel5.Location = new System.Drawing.Point(535, 50);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(200, 100);
             this.panel5.TabIndex = 10;
+            // 
+            // lbTongTienPhat
+            // 
+            this.lbTongTienPhat.AutoSize = true;
+            this.lbTongTienPhat.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lbTongTienPhat.Location = new System.Drawing.Point(49, 58);
+            this.lbTongTienPhat.Name = "lbTongTienPhat";
+            this.lbTongTienPhat.Size = new System.Drawing.Size(19, 21);
+            this.lbTongTienPhat.TabIndex = 10;
+            this.lbTongTienPhat.Text = "0";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label10.Location = new System.Drawing.Point(47, 37);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(110, 21);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Tổng tiền phạt";
             // 
             // panel6
             // 
@@ -222,21 +251,21 @@
             this.panel6.Size = new System.Drawing.Size(30, 30);
             this.panel6.TabIndex = 8;
             // 
-            // label3
+            // lbSoViPhamDaXuLy
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(90, 58);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(19, 21);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "0";
+            this.lbSoViPhamDaXuLy.AutoSize = true;
+            this.lbSoViPhamDaXuLy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSoViPhamDaXuLy.Location = new System.Drawing.Point(163, 16);
+            this.lbSoViPhamDaXuLy.Name = "lbSoViPhamDaXuLy";
+            this.lbSoViPhamDaXuLy.Size = new System.Drawing.Size(19, 21);
+            this.lbSoViPhamDaXuLy.TabIndex = 7;
+            this.lbSoViPhamDaXuLy.Text = "0";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(29, 16);
+            this.label4.Location = new System.Drawing.Point(12, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(145, 21);
             this.label4.TabIndex = 6;
@@ -246,7 +275,7 @@
             // 
             this.panel7.BackColor = System.Drawing.Color.OrangeRed;
             this.panel7.Controls.Add(this.panel8);
-            this.panel7.Controls.Add(this.label5);
+            this.panel7.Controls.Add(this.lbSoViPhamChuaXuLy);
             this.panel7.Controls.Add(this.label6);
             this.panel7.Location = new System.Drawing.Point(785, 50);
             this.panel7.Name = "panel7";
@@ -262,15 +291,15 @@
             this.panel8.Size = new System.Drawing.Size(30, 30);
             this.panel8.TabIndex = 8;
             // 
-            // label5
+            // lbSoViPhamChuaXuLy
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(90, 58);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(19, 21);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "0";
+            this.lbSoViPhamChuaXuLy.AutoSize = true;
+            this.lbSoViPhamChuaXuLy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSoViPhamChuaXuLy.Location = new System.Drawing.Point(90, 58);
+            this.lbSoViPhamChuaXuLy.Name = "lbSoViPhamChuaXuLy";
+            this.lbSoViPhamChuaXuLy.Size = new System.Drawing.Size(19, 21);
+            this.lbSoViPhamChuaXuLy.TabIndex = 7;
+            this.lbSoViPhamChuaXuLy.Text = "0";
             // 
             // label6
             // 
@@ -327,23 +356,31 @@
             // 
             // chart2
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea2);
+            chartArea4.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea4);
             this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.chart2.Legends.Add(legend2);
+            legend4.Name = "Legend1";
+            this.chart2.Legends.Add(legend4);
             this.chart2.Location = new System.Drawing.Point(0, 0);
             this.chart2.Name = "chart2";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Lượt vào";
-            this.chart2.Series.Add(series2);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Lượt vào";
+            dataPoint15.AxisLabel = "CNTT";
+            dataPoint16.AxisLabel = "Kinh tế";
+            dataPoint17.AxisLabel = "Luật";
+            dataPoint18.AxisLabel = "Tâm lý học";
+            series4.Points.Add(dataPoint15);
+            series4.Points.Add(dataPoint16);
+            series4.Points.Add(dataPoint17);
+            series4.Points.Add(dataPoint18);
+            this.chart2.Series.Add(series4);
             this.chart2.Size = new System.Drawing.Size(450, 300);
             this.chart2.TabIndex = 0;
             this.chart2.Text = "chart2";
-            title2.Name = "LuotVao";
-            title2.Text = "Lượt vào theo khoa";
-            this.chart2.Titles.Add(title2);
+            title4.Name = "LuotVao";
+            title4.Text = "Lượt vào theo khoa";
+            this.chart2.Titles.Add(title4);
             // 
             // label7
             // 
@@ -372,6 +409,7 @@
             this.button1.TabIndex = 19;
             this.button1.Text = "Thống kê";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ThongKeForm
             // 
@@ -392,16 +430,10 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnThongKe);
             this.Controls.Add(this.pnChart);
-            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ThongKeForm";
             this.Text = "ThongKeForm";
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            series2.Points.AddXY("CNTT", 14);
-            series2.Points.AddXY("Kinh tế", 7);
-            series2.Points.AddXY("Luật", 3);
-            series2.Points.AddXY("Tâm lý học", 10);
             this.pnChart.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -429,15 +461,15 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbThietBiDangMuon;
+        private System.Windows.Forms.Label lbTBDangMuon;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbSoViPhamDaXuLy;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbSoViPhamChuaXuLy;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -448,5 +480,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lbTongTienPhat;
     }
 }

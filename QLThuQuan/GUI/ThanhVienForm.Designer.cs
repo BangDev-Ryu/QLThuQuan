@@ -39,7 +39,7 @@
             this.btnAddThanhVien = new System.Windows.Forms.Button();
             this.btnUpdateThanhVien = new System.Windows.Forms.Button();
             this.btnDeleteThanhVien = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddLuotVao = new System.Windows.Forms.Button();
@@ -158,18 +158,19 @@
             this.btnDeleteThanhVien.UseVisualStyleBackColor = true;
             this.btnDeleteThanhVien.Click += new System.EventHandler(this.btnDeleteThanhVien_Click);
             // 
-            // textBox1
+            // txtSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(91, 18);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(209, 22);
-            this.textBox1.TabIndex = 4;
+            this.txtSearch.Location = new System.Drawing.Point(91, 18);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(209, 22);
+            this.txtSearch.TabIndex = 4;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtSearch);
             this.panel1.Location = new System.Drawing.Point(985, 97);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
@@ -243,7 +244,7 @@
         private System.Windows.Forms.Button btnAddThanhVien;
         private System.Windows.Forms.Button btnUpdateThanhVien;
         private System.Windows.Forms.Button btnDeleteThanhVien;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAddLuotVao;

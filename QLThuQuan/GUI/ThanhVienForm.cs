@@ -155,17 +155,22 @@ namespace QLThuQuan.GUI
                     string Password = formAdd.PasswordInput;
 
                     ThanhVien tv = thanhVienBLL.GetThanhVienByID(ID);
-                    int checkLog = thanhVienBLL.checkLogin(ID, Password);
 
-                    if (checkLog == 0)
+                    // Nếu có password (nhập tay), kiểm tra lại, nếu không thì bỏ qua (quét chỉ dùng ID)
+                    if (!string.IsNullOrEmpty(Password))
                     {
-                        MessageBox.Show("Không phải thành viên.");
-                        return;
-                    }
-                    else if (checkLog == -1)
-                    {
-                        MessageBox.Show("Mật khẩu không đúng.");
-                        return;
+                        int checkLog = thanhVienBLL.checkLogin(ID, Password);
+
+                        if (checkLog == 0)
+                        {
+                            MessageBox.Show("Không phải thành viên.");
+                            return;
+                        }
+                        else if (checkLog == -1)
+                        {
+                            MessageBox.Show("Mật khẩu không đúng.");
+                            return;
+                        }
                     }
 
                     if (tv.trangThai == "Đang vi phạm")
@@ -174,22 +179,29 @@ namespace QLThuQuan.GUI
                         return;
                     }
 
-                    DateTime timeIn = DateTime.Now;
+                    // Đã thêm lượt vào trong form rồi, có thể hiện thêm thông báo ở đây nếu muốn
+                    MessageBox.Show("Ghi nhận lượt vào thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    string info = $"THÔNG TIN THÀNH VIÊN:\n" +
-                          $"- Mã TV: {tv.id}\n" +
-                          $"- Tên đăng nhập: {tv.username}\n" +
-                          $"- Họ tên: {tv.fullName}\n" +
-                          $"- Khoa: {tv.khoa}\n" +
-                          $"- Ngành: {tv.nganh}\n" +
-                          $"- Trạng thái: {tv.trangThai}\n" +
-                          $"- Thời điểm vào: {timeIn:HH:mm:ss dd/MM/yyyy}";
-
-                    MessageBox.Show(info, "Ghi nhận thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    MessageBox.Show("Ghi nhận thành công.");
-                    bool add = thanhVienBLL.AddLuotVao(tv.id, timeIn);
+                    // Nếu muốn load lại danh sách hoặc làm gì thêm, làm ở đây
+                    LoadData();
                 }
+            }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = txtSearch.Text.Trim();
+
+            if (string.IsNullOrEmpty(keyword))
+            {
+                LoadData();
+            }
+            else
+            {
+                List<ThanhVien> result = thanhVienBLL.SearchThanhVien(keyword);
+                tableThanhVien.DataSource = null;
+                tableThanhVien.DataSource = result;
+                tableThanhVien.ClearSelection();
             }
         }
     }

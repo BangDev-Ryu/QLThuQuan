@@ -40,7 +40,6 @@
             this.ngayhethan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lydo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.trangthai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isexist = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tableViPham)).BeginInit();
@@ -48,8 +47,8 @@
             // 
             // add_btn
             // 
-            this.add_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.add_btn.Location = new System.Drawing.Point(73, 87);
+            this.add_btn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.add_btn.Location = new System.Drawing.Point(12, 84);
             this.add_btn.Name = "add_btn";
             this.add_btn.Size = new System.Drawing.Size(116, 36);
             this.add_btn.TabIndex = 0;
@@ -59,8 +58,8 @@
             // 
             // edit_btn
             // 
-            this.edit_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edit_btn.Location = new System.Drawing.Point(317, 87);
+            this.edit_btn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edit_btn.Location = new System.Drawing.Point(286, 84);
             this.edit_btn.Name = "edit_btn";
             this.edit_btn.Size = new System.Drawing.Size(116, 36);
             this.edit_btn.TabIndex = 1;
@@ -70,8 +69,8 @@
             // 
             // delete_btn
             // 
-            this.delete_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.delete_btn.Location = new System.Drawing.Point(195, 87);
+            this.delete_btn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delete_btn.Location = new System.Drawing.Point(147, 84);
             this.delete_btn.Name = "delete_btn";
             this.delete_btn.Size = new System.Drawing.Size(116, 36);
             this.delete_btn.TabIndex = 2;
@@ -85,6 +84,7 @@
             this.tableViPham.AllowUserToDeleteRows = false;
             this.tableViPham.AllowUserToResizeColumns = false;
             this.tableViPham.AllowUserToResizeRows = false;
+            this.tableViPham.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tableViPham.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.tableViPham.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.tableViPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -96,13 +96,12 @@
             this.ngayphat,
             this.ngayhethan,
             this.lydo,
-            this.trangthai,
-            this.isexist});
-            this.tableViPham.Enabled = false;
+            this.trangthai});
             this.tableViPham.EnableHeadersVisualStyles = false;
             this.tableViPham.GridColor = System.Drawing.SystemColors.ButtonFace;
             this.tableViPham.Location = new System.Drawing.Point(12, 136);
             this.tableViPham.Name = "tableViPham";
+            this.tableViPham.ReadOnly = true;
             this.tableViPham.RowHeadersVisible = false;
             this.tableViPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tableViPham.ShowCellErrors = false;
@@ -116,60 +115,61 @@
             this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.id.HeaderText = "ID";
             this.id.Name = "id";
+            this.id.ReadOnly = true;
             // 
             // idthanhvien
             // 
-            this.idthanhvien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.idthanhvien.HeaderText = "ID thành viên";
             this.idthanhvien.Name = "idthanhvien";
+            this.idthanhvien.ReadOnly = true;
             // 
             // hinhthucxuly
             // 
             this.hinhthucxuly.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.hinhthucxuly.HeaderText = "Hình thức xử lý";
             this.hinhthucxuly.Name = "hinhthucxuly";
+            this.hinhthucxuly.ReadOnly = true;
             // 
             // tienboithuong
             // 
             this.tienboithuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.tienboithuong.HeaderText = "Tiền bồi thường";
             this.tienboithuong.Name = "tienboithuong";
+            this.tienboithuong.ReadOnly = true;
             // 
             // ngayphat
             // 
             this.ngayphat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ngayphat.HeaderText = "Ngày phạt";
             this.ngayphat.Name = "ngayphat";
+            this.ngayphat.ReadOnly = true;
             // 
             // ngayhethan
             // 
             this.ngayhethan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ngayhethan.HeaderText = "Ngày hết hạn";
             this.ngayhethan.Name = "ngayhethan";
+            this.ngayhethan.ReadOnly = true;
             // 
             // lydo
             // 
             this.lydo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.lydo.HeaderText = "Lý do";
             this.lydo.Name = "lydo";
+            this.lydo.ReadOnly = true;
             // 
             // trangthai
             // 
             this.trangthai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.trangthai.HeaderText = "Trạng thái";
             this.trangthai.Name = "trangthai";
-            // 
-            // isexist
-            // 
-            this.isexist.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.isexist.HeaderText = "Is exsist";
-            this.isexist.Name = "isexist";
+            this.trangthai.ReadOnly = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(567, 98);
+            this.label1.Location = new System.Drawing.Point(745, 104);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 16);
             this.label1.TabIndex = 4;
@@ -178,7 +178,7 @@
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(635, 95);
+            this.txtSearch.Location = new System.Drawing.Point(827, 101);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(210, 22);
             this.txtSearch.TabIndex = 5;
@@ -222,6 +222,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayhethan;
         private System.Windows.Forms.DataGridViewTextBoxColumn lydo;
         private System.Windows.Forms.DataGridViewTextBoxColumn trangthai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn isexist;
     }
 }

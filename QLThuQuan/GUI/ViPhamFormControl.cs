@@ -16,13 +16,14 @@ namespace QLThuQuan.GUI
     public partial class ViPhamFormControl: Form
     {
         ViPhamBLL viPhamBLL = new ViPhamBLL();
+        ThanhVienBLL thanhVienBLL = new ThanhVienBLL();
 
         public int id;
         public string idThanhVien => txtIdThanhVien.Text;
-        public string hinhThucXuLy => txtHinhThuc.Text;
+        public string hinhThucXuLy => cbHinhThuc.Text;
         public int tienBoiThuong => int.Parse(txtTien.Text);
-        public DateTime ngayPhat => DateTime.Parse(dtNgayPhat.Text);
-        public DateTime ngayHethan => DateTime.Parse(dtNgayHetHan.Text);
+        public DateTime ngayPhat;
+        public DateTime ngayHethan;
         public string lyDo => txtLyDo.Text;
         public bool isExist => true;
 
@@ -33,10 +34,8 @@ namespace QLThuQuan.GUI
             {
                 this.id = viPham.Id;
                 txtIdThanhVien.Text = viPham.IdThanhVien.ToString();
-                txtHinhThuc.Text = viPham.HinhThucXuLy;
+                cbHinhThuc.Text = viPham.HinhThucXuLy;
                 txtTien.Text = viPham.TienBoiThuong.ToString();
-                dtNgayPhat.Text = viPham.NgayPhat.ToString("yyyy-MM-dd");
-                dtNgayHetHan.Text = viPham.NgayHetHan.ToString("yyyy-MM-dd");
                 txtLyDo.Text = viPham.LyDo;
             }
         }
@@ -88,20 +87,56 @@ namespace QLThuQuan.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtIdThanhVien.Text) || string.IsNullOrEmpty(txtHinhThuc.Text) || string.IsNullOrEmpty(txtTien.Text) || string.IsNullOrEmpty(dtNgayPhat.Text) || string.IsNullOrEmpty(dtNgayHetHan.Text) || string.IsNullOrEmpty(txtLyDo.Text) )
+            if (string.IsNullOrEmpty(txtIdThanhVien.Text) || string.IsNullOrEmpty(cbHinhThuc.Text) || string.IsNullOrEmpty(txtTien.Text) || string.IsNullOrEmpty(txtLyDo.Text) )
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }
+
+            ThanhVien thanhVien = thanhVienBLL.GetThanhVienByID(int.Parse(txtIdThanhVien.Text.Trim()));
+
+            if (thanhVien == null)
+            {
+                MessageBox.Show("Thành viên không tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string selectedHinhThuc = cbHinhThuc.SelectedItem.ToString();
+            int tgianKhoa = 0;
+
+            if (selectedHinhThuc != "Bồi thường" && txtTien.Text != "0") 
+            {
+                MessageBox.Show("Chỉ được nhập tiền bồi thường khi hình thức xử lý là Bồi thường ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (selectedHinhThuc == "Khóa thẻ 1 tháng")
+            {
+                tgianKhoa = 1;
+            }
+            else if (selectedHinhThuc == "Khóa thẻ 2 tháng")
+            {
+                tgianKhoa = 2;
+            }
+            else if (selectedHinhThuc == "Khóa thẻ 3 tháng")
+            {
+                tgianKhoa = 3;
+            }
+
+            if (selectedHinhThuc != "Bồi thường")
+            {
+                thanhVien.trangThai = "Khóa";
+                thanhVienBLL.UpdateThanhVien(thanhVien);
             }
 
             var viPham = new ViPham
             {
                 Id = this.id,
                 IdThanhVien = int.Parse(txtIdThanhVien.Text.Trim()),
-                HinhThucXuLy = txtHinhThuc.Text.Trim(),
+                HinhThucXuLy = cbHinhThuc.Text.Trim(),
                 TienBoiThuong = int.Parse(txtTien.Text.Trim()),
-                NgayPhat = DateTime.Parse(dtNgayPhat.Text.Trim()),
-                NgayHetHan = DateTime.Parse(dtNgayHetHan.Text.Trim()),
+                NgayPhat = DateTime.Now,
+                NgayHetHan = DateTime.Now.AddMonths(tgianKhoa),
                 LyDo = txtLyDo.Text.Trim(),
                 TrangThai = "Đang xử lý",
                 IsExist = true
@@ -143,5 +178,6 @@ namespace QLThuQuan.GUI
         {
             this.Close();
         }
+
     }
 }

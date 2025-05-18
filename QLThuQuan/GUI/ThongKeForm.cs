@@ -39,9 +39,10 @@ namespace QLThuQuan.GUI
         private void LoadAllStats()
         {
             lbNumThietBiDaMuon.Text = thongKeBLL.GetSoThietBiDaMuon().ToString();
-            label1.Text = thongKeBLL.GetSoThietBiDangMuon().ToString();
-            label3.Text = thongKeBLL.GetSoViPhamDaXuLy().ToString();
-            label5.Text = thongKeBLL.GetSoViPhamChuaXuLy().ToString();
+            lbThietBiDangMuon.Text = thongKeBLL.GetSoThietBiDangMuon().ToString();
+            lbSoViPhamDaXuLy.Text = thongKeBLL.GetSoViPhamDaXuLy().ToString();
+            lbSoViPhamChuaXuLy.Text = thongKeBLL.GetSoViPhamChuaXuLy().ToString();
+            lbTongTienPhat.Text = thongKeBLL.GetTongTienPhat().ToString("N0") + " VNĐ";
         }
 
         private void LoadLuotVaoChart()
